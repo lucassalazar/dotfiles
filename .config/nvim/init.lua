@@ -1,0 +1,8 @@
+require("lucas.plugins-setup")
+require("lucas.core.options")
+require("lucas.core.keymaps")
+require("lucas.core.colorscheme")
+require("lucas.plugins.comment")
+require("lucas.plugins.nvim-tree")
+require("lucas.plugins.lualine")
+require("lucas.plugins.telescope")
