@@ -1,0 +1,2 @@
+sh ~/.local/share/scripts/screencfg.sh &
+sh ~/.local/share/scripts/wallpapercfg.sh
