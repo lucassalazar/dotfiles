@@ -233,21 +233,21 @@ bar {
   height 28
   tray_padding 3 
   colors{
-    background         #131313
-    statusline         #ffffff
-    separator          #d2c452
-    active_workspace   #333333 #792E78 #ffffff
-    focused_workspace  #a95Ea8 #792E78 #ffffff
-    inactive_workspace #513E51 #222222 #ffffff
-    urgent_workspace   #a9a85E #79782E #ffffff
-    binding_mode       #008576 #16b8a5 #000000
+    background         #2e3440
+    statusline         #cdcecf
+    separator          #81a1c1
+    active_workspace   #81a1c1 #81a1c1 #2e3440
+    focused_workspace  #8cafd2 #8cafd2 #2e3440
+    inactive_workspace #3b4252 #3b4252 #cdcecf
+    urgent_workspace   #d06779 #d06779 #cdcecf
+    binding_mode       #b48ead #b48ead #2e3440
   }
 }
 
 # Titlebar customization
 show_marks yes
 title_align center
-client.focused          #a95Ea8 #792E78 #ffffff #d99Ed8 #a95Ea8 
-client.focused_inactive #222222 #111111 #ffffff #292A2E #222222
-client.unfocused        #303030 #202020 #888888 #666666 #303030
-client.urgent           #7F3700 #8F4700 #ffffff #8F4700 #8F4700
+client.focused          #8cafd2 #8cafd2 #2e3440 #cdcecf #8cafd2 
+client.focused_inactive #2e3440 #2e3440 #cdcecf #2e3440 #2e3440
+client.unfocused        #2e3440 #2e3440 #cdcecf #2e3440 #2e3440
+client.urgent           #d06779 #d06779 #cdcecf #cdcecf #d06779
