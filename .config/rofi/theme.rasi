@@ -1,52 +1,69 @@
-* {
-    color:#eee;
-    background-color:#0000;
-    background:#333e;
+*{
+    color: #cdcecf;
+    background-color: #2e344000;
+    background: #2e3440ee;
 }
+
 #window {
-    background-color:@background;
-    border-color:#a5a;
-    border:2;
-    padding:4;
+    background-color: @background;
+    border-color: #8cafd2;
+    border: 2;
+    padding: 4;
 }
+
 #message {
-    border:2;
-    padding:4;
+    border: 2;
+    padding: 4;
 }
+
 #listview {
-    fixed-height:0;
-    scrollbar:true;
+    fixed-height: 0;
+    scrollbar: true;
 }
+
 #element {
-    padding:4;
-    margin:0 4;
+    padding: 4;
+    margin: 0 4;
 }
+
+#element-text {
+    background-color: inherit;
+    text-color: inherit;
+}
+
 #element.selected.normal {
-    background-color:#a5a;
-    text-color:white;
+    background-color: #8cafd2;
+    text-color: #2e3440;
 }
-element-icon {
-  size:2ch;
+
+#element-icon {
+  size: 2ch;
 }
+
 #scrollbar {
-    handle-color:#a5a;
-    handle-width:4px;
+    handle-color: #8cafd2;
+    handle-width: 4px;
 }
+
 #button {
-    spacing:4;
+    spacing: 4;
 }
+
 #button.selected {
-    background-color:#a5a;
+    background-color: #8cafd2;
 }
+
 #inputbar {
-    background-color:#0003;
-    padding:4;
-    margin:4;
+    background-color:#3b4252;
+    padding: 4;
+    margin: 4;
 }
+
 #inputbar {
     children:[prompt,textbox-prompt-colon,entry,case-indicator];
 }
+
 #textbox-prompt-colon {
-    expand:    false;
-    str:       ":";
+    expand: false;
+    str: ":";
 }
