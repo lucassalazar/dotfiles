@@ -25,6 +25,6 @@ typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
 
 neofetch
 
-alias config='/usr/bin/git --git-dir=/home/lucas/dotfiles --work-tree=/home/lucas'
-
 source /opt/asdf-vm/asdf.sh
+
+alias config='/usr/bin/git --git-dir=/home/lucas/dotfiles --work-tree=/home/lucas'

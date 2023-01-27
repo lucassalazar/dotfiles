@@ -1,0 +1,8 @@
+configuration {
+  modes: "window,drun,run,ssh";
+	font: "MesloLGS NF 9";
+	show-icons: true;
+	drun-match-fields: "name,generic,exec,categories";
+}
+
+@theme "~/.config/rofi/theme.rasi"

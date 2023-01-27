@@ -9,12 +9,11 @@
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
-# Set modifier key as "super"
 set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:MesloLGS NF 9
+font pango:MesloLGS NF 8
 
 # Start XDG autostart .desktop files using dex. See also
 # https://wiki.archlinux.org/index.php/XDG_Autostart
@@ -27,22 +26,23 @@ exec --no-startup-id dex --autostart --environment i3
 # screen before suspend. Use loginctl lock-session to lock your screen.
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 
+# NetworkManager is the most popular way to manage wireless networks on Linux,
+# and nm-applet is a desktop environment-independent system tray GUI for it.
+exec --no-startup-id nm-applet
+
 # Check screen layout
 bindsym $mod+Shift+s exec --no-startup-id sh ~/.local/share/scripts/screencfg.sh
 
 # Change keyboard layout
 bindsym $mod+Ctrl+k exec --no-startup-id sh ~/.local/share/scripts/keyboardLayoutToggle.sh
 
-# System tray GUIs
 exec_always --no-startup-id autotiling
 exec --no-startup-id setxkbmap br-abnt2
 exec --no-startup-id picom
-exec --no-startup-id nm-applet
 exec --no-startup-id udiskie -t
 exec --no-startup-id volumeicon 
 exec --no-startup-id cbatticon
 exec --no-startup-id fbxkb
-exec --no-startup-id blueberry
 
 # Brightness
 bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +10%
@@ -56,37 +56,20 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ to
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
 # Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
 # move tiling windows via drag & drop by left-clicking into the title bar,
 # or left-clicking anywhere into the window while holding the floating modifier.
 # tiling_drag modifier titlebar
-floating_modifier $mod
 
-# start a terminal window
+# start a terminal
 bindsym $mod+Return exec alacritty
-
-# start a file manager window
-bindsym $mod+t exec thunar
 
 # kill focused window
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-# bindsym $mod+d exec --no-startup-id dmenu_run -fn "MesloLGS NF-8"
-bindsym $mod+d exec "rofi -modes drun,run -show drun" 
-
-# Screenshots
-# Fullscreen
-bindsym Print exec --no-startup-id maim "/home/$USER/Pictures/Screenshots/$(date)" 
-# Active window
-bindsym $mod+Print exec --no-startup-id maim --window $(xdotool getactivewindow) "/home/$USER/Pictures/Screenshots/$(date)"
-# Selection
-bindsym Shift+Print exec --no-startup-id maim --select "/home/$USER/Pictures/Screenshots/$(date)"
-# Fullscreen clipboard
-bindsym Ctrl+Print exec --no-startup-id maim | xclip -selection clipboard -t image/png
-# Active window clipboard
-bindsym Ctrl+$mod+Print exec --no-startup-id maim --window $(xdotool getactivewindow) | xclip -selection clipboard -t image/png
-# Selection clipboard
-bindsym Ctrl+Shift+Print exec --no-startup-id maim --select | xclip -selection clipboard -t image/png
+bindsym $mod+d exec --no-startup-id dmenu_run -fn "MesloLGS NF-8"
 
 # change focus
 bindsym $mod+h focus left
@@ -94,7 +77,7 @@ bindsym $mod+j focus down
 bindsym $mod+k focus up
 bindsym $mod+l focus right
 
-# change the focus with the cursor keys
+# alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
 bindsym $mod+Down focus down
 bindsym $mod+Up focus up
@@ -106,20 +89,17 @@ bindsym $mod+Shift+j move down
 bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
 
-# move focused windows the cursor keys
+# alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
 bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
-# split in a horizontal orientation
+# split in horizontal orientation
 bindsym $mod+Control+l split h
 
-# split in a vertical orientation
+# split in vertical orientation
 bindsym $mod+Control+j split v
-
-# toggles the split orientation
-bindsym $mod+e layout toggle split
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
@@ -127,18 +107,19 @@ bindsym $mod+f fullscreen toggle
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
 
-# toggle between tiling and floating windoww
+# toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
 
-# change the focus between tiling and floating windows
+# change focus between tiling / floating windows
 bindsym $mod+space focus mode_toggle
 
 # focus the parent container
-# bindsym $mod+a focus parent
+bindsym $mod+a focus parent
 
 # focus the child container
-# bindsym $mod+d focus child
+#bindsym $mod+d focus child
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
@@ -165,7 +146,7 @@ bindsym $mod+8 workspace number $ws8
 bindsym $mod+9 workspace number $ws9
 bindsym $mod+0 workspace number $ws10
 
-# move a focused container to some workspace
+# move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace number $ws1
 bindsym $mod+Shift+2 move container to workspace number $ws2
 bindsym $mod+Shift+3 move container to workspace number $ws3
@@ -179,10 +160,8 @@ bindsym $mod+Shift+0 move container to workspace number $ws10
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
-
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
-
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
@@ -194,6 +173,23 @@ bindsym $mod+x exec betterlockscreen -l blur
 
 # Suspend
 bindsym $mod+Shift+x exec systemctl suspend
+
+# File manager
+bindsym $mod+t exec thunar
+
+## Screenshots
+# Fullscreen
+bindsym Print exec --no-startup-id maim "/home/$USER/Pictures/Screenshots/$(date)" 
+# Active window
+bindsym $mod+Print exec --no-startup-id maim --window $(xdotool getactivewindow) "/home/$USER/Pictures/Screenshots/$(date)"
+# Selection
+bindsym Shift+Print exec --no-startup-id maim --select "/home/$USER/Pictures/Screenshots/$(date)"
+# Fullscreen clipboard
+bindsym Ctrl+Print exec --no-startup-id maim | xclip -selection clipboard -t image/png
+# Active window clipboard
+bindsym Ctrl+$mod+Print exec --no-startup-id maim --window $(xdotool getactivewindow) | xclip -selection clipboard -t image/png
+# Selection clipboard
+bindsym Ctrl+Shift+Print exec --no-startup-id maim --select | xclip -selection clipboard -t image/png
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -225,29 +221,58 @@ bindsym $mod+r mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-  i3bar_command i3bar
-  status_command i3blocks
-  strip_workspace_numbers yes
-  separator_symbol " "
-  position top
-  height 28
-  tray_padding 3 
-  colors{
-    background         #131313
-    statusline         #ffffff
-    separator          #d2c452
-    active_workspace   #333333 #792E78 #ffffff
-    focused_workspace  #a95Ea8 #792E78 #ffffff
-    inactive_workspace #513E51 #222222 #ffffff
-    urgent_workspace   #a9a85E #79782E #ffffff
-    binding_mode       #008576 #16b8a5 #000000
-  }
+        status_command i3status
 }
 
-# Titlebar customization
-show_marks yes
-title_align center
-client.focused          #a95Ea8 #792E78 #ffffff #d99Ed8 #a95Ea8 
-client.focused_inactive #222222 #111111 #ffffff #292A2E #222222
-client.unfocused        #303030 #202020 #888888 #666666 #303030
-client.urgent           #7F3700 #8F4700 #ffffff #8F4700 #8F4700
+# i3-gaps
+# gaps [inner|outer|horizontal|vertical|top|left|bottom|right] <px>
+default_border pixel 0
+gaps inner 10
+gaps outer -2
+
+# Smart gaps (gaps used if only more than one container on the workspace)
+smart_gaps on
+
+# Smart borders (draw borders around container only if it is not the only container on this workspace) 
+# on|no_gaps (on=always activate and no_gaps=only activate if the gap size to the edge of the screen is 0)
+smart_borders on
+
+# Press $mod+Shift+g to enter the gap mode. Choose o or i for modifying outer/inner gaps. Press one of + / - (in-/decrement for current workspace) or 0 (remove 
+# gaps for current workspace). If you also press Shift with these keys, the change will be global for all workspaces.
+set $mode_gaps Gaps: (o) outer, (i) inner
+set $mode_gaps_outer Outer Gaps: +|-|0 (local), Shift + +|-|0 (global)
+set $mode_gaps_inner Inner Gaps: +|-|0 (local), Shift + +|-|0 (global)
+bindsym $mod+Shift+g mode "$mode_gaps"
+
+mode "$mode_gaps" {
+        bindsym o      mode "$mode_gaps_outer"
+        bindsym i      mode "$mode_gaps_inner"
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+mode "$mode_gaps_inner" {
+        bindsym plus  gaps inner current plus 5
+        bindsym minus gaps inner current minus 5
+        bindsym 0     gaps inner current set 0
+
+        bindsym Shift+plus  gaps inner all plus 5
+        bindsym Shift+minus gaps inner all minus 5
+        bindsym Shift+0     gaps inner all set 0
+
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+mode "$mode_gaps_outer" {
+        bindsym plus  gaps outer current plus 5
+        bindsym minus gaps outer current minus 5
+        bindsym 0     gaps outer current set 0
+
+        bindsym Shift+plus  gaps outer all plus 5
+        bindsym Shift+minus gaps outer all minus 5
+        bindsym Shift+0     gaps outer all set 0
+
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}

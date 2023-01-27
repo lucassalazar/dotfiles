@@ -1,0 +1,11 @@
+#!/usr/bin/python3
+
+import os
+import psutil
+ 
+# Getting loadover15 minutes
+load1, load5, load15 = psutil.getloadavg()
+ 
+cpu_usage = round((load15/os.cpu_count()) * 100, 2)
+
+print(f'\ue266 {cpu_usage}%')
