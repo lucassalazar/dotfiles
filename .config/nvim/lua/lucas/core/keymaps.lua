@@ -1,48 +1,58 @@
-vim.g.mapleader = " "
-
 local keymap = vim.keymap -- for conciseness
 
----------------------
--- General Keymaps
----------------------
+vim.g.mapleader = " "
 
--- use jk to exit insert mode
-keymap.set("i", "jk", "<ESC>")
+keymap.set("n", "<leader>pv", vim.cmd.Ex)
 
--- clear search highlights
-keymap.set("n", "<leader>nh", ":nohl<CR>")
+-- toggles splitted window maximization
+keymap.set("n", "<leader>sm", ":MaximizerToggle<CR>")
 
--- delete single character without copying into register
-keymap.set("n", "x", '"_x')
+-- moves the highlighted lines up and down
+keymap.set("v", "J", ":m '>+1<CR>gv=gv")
+keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
--- increment/decrement numbers
-keymap.set("n", "<leader>+", "<C-a>") -- increment
-keymap.set("n", "<leader>-", "<C-x>") -- decrement
+-- brings up the bottom line up keeping the cursor still
+keymap.set("n", "J", "mzJ`z")
 
--- window management
-keymap.set("n", "<leader>sv", "<C-w>v") -- split window vertically
-keymap.set("n", "<leader>sh", "<C-w>s") -- split window horizontally
-keymap.set("n", "<leader>se", "<C-w>=") -- make split windows equal width & height
-keymap.set("n", "<leader>sx", ":close<CR>") -- close current split window
+-- jumps down keeping the cursor in the middle of the page
+keymap.set("n", "<C-d>", "<C-d>zz")
+keymap.set("n", "<C-u>", "<C-u>zz")
 
-keymap.set("n", "<leader>to", ":tabnew<CR>") -- open new tab
-keymap.set("n", "<leader>tx", ":tabclose<CR>") -- close current tab
-keymap.set("n", "<leader>tn", ":tabn<CR>") --  go to next tab
-keymap.set("n", "<leader>tp", ":tabp<CR>") --  go to previous tab
+-- keeps the searched terms in the middle of the page
+keymap.set("n", "n", "nzzzv")
+keymap.set("n", "N", "Nzzzv")
 
-----------------------
--- Plugin Keybinds
-----------------------
+-- greatest remap ever (ThePrimeagen)
+-- keeps the yanked in buffer over the deleted highlight
+keymap.set("x", "<leader>p", [["_dP]])
 
--- vim-maximizer
-keymap.set("n", "<leader>sm", ":MaximizerToggle<CR>") -- toggle split window maximization
+-- next greatest remap ever (asbjornHaland)
+-- calls the + register (system clipboard)
+keymap.set({ "n", "v" }, "<leader>y", [["+y]])
+-- calls the + register for the entire line
+keymap.set("n", "<leader>Y", [["+Y]])
 
--- nvim-tree
-keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>") -- toggle file explorer
+keymap.set({ "n", "v" }, "<leader>d", [["_d]])
 
--- telescope
-keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>") -- find files within current working directory, respects .gitignore
-keymap.set("n", "<leader>fs", "<cmd>Telescope live_grep<cr>") -- find string in current working directory as you type
-keymap.set("n", "<leader>fc", "<cmd>Telescope grep_string<cr>") -- find string under cursor in current working directory
-keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<cr>") -- list open buffers in current neovim instance
-keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<cr>") -- list available help tags
+keymap.set("n", "Q", "<nop>")
+
+-- allows filesystem navigation and tmux
+keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
+
+-- indents the code
+keymap.set("n", "<leader>f", vim.lsp.buf.format)
+
+-- quick fix navigation
+-- keymap.set("n", "<C->", "<cmd>cnext<CR>zz")
+-- keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz")
+-- keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz")
+-- keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
+
+-- search and replace
+keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+
+-- makes the file executable
+keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
+
+-- opens plugins-setup.lua
+keymap.set("n", "<leader>vpp", "<cmd>e ~/.config/nvim/lua/lucas/plugins-setup.lua<CR>");
