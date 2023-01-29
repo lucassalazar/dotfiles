@@ -1,6 +1,6 @@
-local setup, lsp = pcall(require, "lsp-zero")
+local setup_lsp, lsp = pcall(require, "lsp-zero")
 
-if not setup then
+if not setup_lsp then
 	return
 end
 
@@ -30,7 +30,12 @@ lsp.configure('sumneko_lua', {
     }
 })
 
-local cmp = require("cmp")
+local setup_cmp, cmp = pcall(require, "cmp")
+
+if not setup_cmp then
+    return
+end
+
 local cmp_select = {behavior = cmp.SelectBehavior.Select}
 local cmp_mappings = lsp.defaults.cmp_mappings({
 	["<C-k>"] = cmp.mapping.select_prev_item(cmp_select),
