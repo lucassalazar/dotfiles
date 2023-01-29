@@ -36,6 +36,11 @@ if not setup_cmp then
     return
 end
 
+local lspkind_setup, lspkind = pcall(require, "lspkind")
+if not lspkind_setup then
+	return
+end
+
 local cmp_select = {behavior = cmp.SelectBehavior.Select}
 local cmp_mappings = lsp.defaults.cmp_mappings({
 	["<C-k>"] = cmp.mapping.select_prev_item(cmp_select),
@@ -48,7 +53,14 @@ cmp_mappings['<Tab>'] = nil
 cmp_mappings['<S-Tab>'] = nil
 
 lsp.setup_nvim_cmp({
-	mapping = cmp_mappings
+	mapping = cmp_mappings,
+
+    formatting = {
+        format = lspkind.cmp_format({
+            maxwidth = 50,
+            ellipsis_char = "..."
+        })
+    }
 })
 
 lsp.set_preferences({
