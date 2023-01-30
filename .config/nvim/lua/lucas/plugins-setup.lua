@@ -1,13 +1,13 @@
 -- auto install packer if not installed
 local ensure_packer = function()
-	local fn = vim.fn
-	local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
-	if fn.empty(fn.glob(install_path)) > 0 then
-		fn.system({ "git", "clone", "--depth", "1", "https://github.com/wbthomason/packer.nvim", install_path })
-		vim.cmd([[packadd packer.nvim]])
-		return true
-	end
-	return false
+    local fn = vim.fn
+    local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
+    if fn.empty(fn.glob(install_path)) > 0 then
+        fn.system({ "git", "clone", "--depth", "1", "https://github.com/wbthomason/packer.nvim", install_path })
+        vim.cmd([[packadd packer.nvim]])
+        return true
+    end
+    return false
 end
 
 local packer_bootstrap = ensure_packer() -- true if packer was just installed
@@ -25,78 +25,81 @@ vim.cmd([[
 -- import packer safely
 local status, packer = pcall(require, "packer")
 if not status then
-	return
+    return
 end
 
 return packer.startup(function(use)
-	-- Packer can manage itself
-	use 'wbthomason/packer.nvim'
+    -- Packer can manage itself
+    use 'wbthomason/packer.nvim'
 
-	use {
-		'nvim-telescope/telescope.nvim', tag = '0.1.1',
-		-- or                            , branch = '0.1.x',
-		requires = { {'nvim-lua/plenary.nvim'} }
-	}
+    use {
+        'nvim-telescope/telescope.nvim', tag = '0.1.1',
+        -- or                            , branch = '0.1.x',
+        requires = { { 'nvim-lua/plenary.nvim' } }
+    }
 
-	-- colorscheme
-	use("EdenEast/nightfox.nvim")
+    -- colorscheme
+    use("EdenEast/nightfox.nvim")
 
     -- window maximizer
     use("szw/vim-maximizer")
 
-	-- commenting with gc
-	use("numToStr/Comment.nvim")
+    -- commenting with gc
+    use("numToStr/Comment.nvim")
 
-	-- file explorer
-	use("nvim-tree/nvim-tree.lua")
+    -- file explorer
+    use("nvim-tree/nvim-tree.lua")
 
-	-- icons
-	use("nvim-tree/nvim-web-devicons")
+    -- tmux & split window navigation
+    use("christoomey/vim-tmux-navigator")
 
-	-- statusline
-	use("nvim-lualine/lualine.nvim")
+    -- icons
+    use("nvim-tree/nvim-web-devicons")
 
-	-- treesitter configutation
-	use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
-	use('nvim-treesitter/playground')
+    -- statusline
+    use("nvim-lualine/lualine.nvim")
 
-	-- search mechanism
-	use("theprimeagen/harpoon")
-	use("mbbill/undotree")
+    -- treesitter configutation
+    use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
+    use('nvim-treesitter/playground')
 
-	-- auto closing
-	use("windwp/nvim-autopairs") 					-- autoclose parens, brackets, quotes, etc...
-	use({ "windwp/nvim-ts-autotag", after = "nvim-treesitter" }) 	-- autoclose tags
+    -- search mechanism
+    use("theprimeagen/harpoon")
+    use("mbbill/undotree")
 
-	-- git integration
-	use("tpope/vim-fugitive")
-	use("lewis6991/gitsigns.nvim")
+    -- auto closing
+    use("windwp/nvim-autopairs") -- autoclose parens, brackets, quotes, etc...
+    use({ "windwp/nvim-ts-autotag", after = "nvim-treesitter" }) -- autoclose tags
 
-	use {
-		'VonHeikemen/lsp-zero.nvim',
-		branch = 'v1.x',
-		requires = {
-			-- LSP Support
-			{'neovim/nvim-lspconfig'},             -- Required
-			{'williamboman/mason.nvim'},           -- Optional
-			{'williamboman/mason-lspconfig.nvim'}, -- Optional
+    -- git integration
+    use("tpope/vim-fugitive")
+    use("lewis6991/gitsigns.nvim")
 
-			-- Autocompletion
-			{'hrsh7th/nvim-cmp'},         -- Required
-			{'hrsh7th/cmp-nvim-lsp'},     -- Required
-			{'hrsh7th/cmp-buffer'},       -- Optional
-			{'hrsh7th/cmp-path'},         -- Optional
-			{'saadparwaiz1/cmp_luasnip'}, -- Optional
-			{'hrsh7th/cmp-nvim-lua'},     -- Optional
-			{"onsails/lspkind.nvim"},     -- vs-code like icons for autocompletion
+    use {
+        'VonHeikemen/lsp-zero.nvim',
+        branch = 'v1.x',
+        requires = {
+            -- LSP Support
+            { 'neovim/nvim-lspconfig' }, -- Required
+            { 'williamboman/mason.nvim' }, -- Optional
+            { 'williamboman/mason-lspconfig.nvim' }, -- Optional
 
-			-- Snippets
-			{'L3MON4D3/LuaSnip'},             -- Required
-			{'rafamadriz/friendly-snippets'}, -- Optional
-		}
-	}
+            -- Autocompletion
+            { 'hrsh7th/nvim-cmp' }, -- Required
+            { 'hrsh7th/cmp-nvim-lsp' }, -- Required
+            { 'hrsh7th/cmp-buffer' }, -- Optional
+            { 'hrsh7th/cmp-path' }, -- Optional
+            { 'saadparwaiz1/cmp_luasnip' }, -- Optional
+            { 'hrsh7th/cmp-nvim-lua' }, -- Optional
+            { "onsails/lspkind.nvim" }, -- vs-code like icons for autocompletion
 
-	if packer_bootstrap then
-		require("packer").sync()
-	end
+            -- Snippets
+            { 'L3MON4D3/LuaSnip' }, -- Required
+            { 'rafamadriz/friendly-snippets' }, -- Optional
+        }
+    }
+
+    if packer_bootstrap then
+        require("packer").sync()
+    end
 end)
