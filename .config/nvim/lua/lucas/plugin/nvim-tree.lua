@@ -44,7 +44,7 @@ nvimtree.setup({
     },
     filters = {
         dotfiles = false
-    }
+    },
 })
 
 -- Opens nvim on startup
