@@ -36,8 +36,8 @@ keymap.set({ "n", "v" }, "<leader>d", [["_d]])
 
 keymap.set("n", "Q", "<nop>")
 
--- allows filesystem navigation and tmux
-keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
+-- opens filesystem navigation (fzf) and tmux
+keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer.sh<CR>")
 
 -- indents the code
 keymap.set("n", "<leader>f", vim.lsp.buf.format)
