@@ -31,7 +31,7 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 bindsym $mod+Shift+s exec --no-startup-id sh ~/.local/share/scripts/screencfg.sh
 
 # Change keyboard layout
-bindsym $mod+Ctrl+k exec --no-startup-id sh ~/.local/share/scripts/keyboardLayoutToggle.sh
+bindsym $mod+Ctrl+k exec --no-startup-id sh ~/.local/share/scripts/keyboardcfg.sh
 
 # System tray GUIs
 exec_always --no-startup-id autotiling
