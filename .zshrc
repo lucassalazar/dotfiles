@@ -1,3 +1,4 @@
+export PATH=$PATH:~/.local/share/scripts
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -13,7 +14,7 @@ source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 
 # History setup
 setopt SHARE_HISTORY
-HISTFILE=$HOME/.zhistory
+HISTFILE=$HOME/.zsh_history
 SAVEHIST=10000
 HISTSIZE=9999
 setopt HIST_EXPIRE_DUPS_FIRST
@@ -28,3 +29,7 @@ neofetch
 source /opt/asdf-vm/asdf.sh
 
 alias config='/usr/bin/git --git-dir=/home/lucas/dotfiles --work-tree=/home/lucas'
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+bindkey -s ^f "tmux-sessionizer.sh\n"
