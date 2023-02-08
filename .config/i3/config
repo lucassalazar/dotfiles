@@ -28,10 +28,10 @@ exec --no-startup-id dex --autostart --environment i3
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 
 # Check screen layout
-bindsym $mod+Shift+s exec --no-startup-id sh ~/.local/share/scripts/screencfg.sh
+bindsym $mod+Shift+s exec --no-startup-id sh ~/.local/share/scripts/screencfg
 
 # Change keyboard layout
-bindsym $mod+Ctrl+k exec --no-startup-id sh ~/.local/share/scripts/keyboardcfg.sh
+bindsym $mod+Ctrl+k exec --no-startup-id sh ~/.local/share/scripts/keyboardcfg
 
 # System tray GUIs
 exec_always --no-startup-id autotiling
