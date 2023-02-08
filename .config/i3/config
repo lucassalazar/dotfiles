@@ -41,7 +41,7 @@ exec --no-startup-id nm-applet
 exec --no-startup-id udiskie -t
 exec --no-startup-id volumeicon 
 exec --no-startup-id cbatticon
-exec --no-startup-id fbxkb
+exec --no-startup-id sbxkb
 exec --no-startup-id blueberry
 
 # Brightness
