@@ -32,4 +32,4 @@ alias config='/usr/bin/git --git-dir=/home/lucas/dotfiles --work-tree=/home/luca
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-bindkey -s ^f "tmux-sessionizer.sh\n"
+bindkey -s ^f "tmux-sessionizer\n"
