@@ -1,0 +1,11 @@
+#!/usr/bin/python3
+
+import subprocess
+
+layout=subprocess.getoutput("setxkbmap -query | grep layout | xargs")
+
+if layout == "layout: us":
+    print(f"\uf11c es")
+
+if layout == "layout: br":
+    print(f"\uf11c br")
