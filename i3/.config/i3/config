@@ -33,10 +33,16 @@ bindsym $mod+Shift+s exec --no-startup-id sh ~/.local/scripts/screencfg
 # Change keyboard layout
 bindsym $mod+Ctrl+k exec --no-startup-id sh ~/.local/scripts/keyboardcfg
 
-# System tray GUIs
-exec_always --no-startup-id autotiling 
-exec_always --no-startup-id picom
+# Set wallpaper
 exec_always --no-startup-id sh ~/.local/scripts/wallpapercfg
+
+# Activate compositor
+exec_always --no-startup-id picom
+
+# Activate auto tiling
+exec_always --no-startup-id autotiling 
+
+# System tray GUIs
 exec --no-startup-id nm-applet
 exec --no-startup-id udiskie -t
 exec --no-startup-id volumeicon 
@@ -187,10 +193,10 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 
 # Lock screen
 # bindsym $mod+x exec betterlockscreen -l  
-# bindsym $mod+x exec betterlockscreen -l dim
 # bindsym $mod+x exec betterlockscreen -l pixel 
+# bindsym $mod+x exec gdmflexiserver
 # bindsym $mod+x exec betterlockscreen -l blur
-bindsym $mod+x exec gdmflexiserver
+bindsym $mod+x exec betterlockscreen -l dim
 
 # Suspend
 bindsym $mod+Shift+x exec systemctl suspend

@@ -5,6 +5,7 @@
 - betterlockscreen
 - blueberry
 - dmenu
+- feh
 - fd-find
 - fzf
 - git
