@@ -37,7 +37,7 @@ bindsym $mod+Ctrl+k exec --no-startup-id sh ~/.local/scripts/keyboardcfg
 exec_always --no-startup-id sh ~/.local/scripts/wallpapercfg
 
 # Activate compositor
-exec_always --no-startup-id picom
+exec --no-startup-id picom
 
 # Activate auto tiling
 exec_always --no-startup-id autotiling 
@@ -80,18 +80,20 @@ bindsym $mod+Shift+q kill
 bindsym $mod+d exec "rofi -modes drun,run -show drun" 
 
 # Screenshots
+
 # Fullscreen
-bindsym Print exec --no-startup-id maim "/home/$USER/Pictures/Screenshots/$(date)" 
+bindsym Print exec --no-startup-id flameshot full -p "/home/$USER/Pictures/Screenshots"
 # Active window
-bindsym $mod+Print exec --no-startup-id maim --window $(xdotool getactivewindow) "/home/$USER/Pictures/Screenshots/$(date)"
+bindsym $mod+Print exec --no-startup-id flameshot screen -n 1 -p "/home/$USER/Pictures/Screenshots"
 # Selection
-bindsym Shift+Print exec --no-startup-id maim --select "/home/$USER/Pictures/Screenshots/$(date)"
+bindsym Shift+Print exec --no-startup-id flameshot gui -p "/home/$USER/Pictures/Screenshots" 
+
 # Fullscreen clipboard
-bindsym Ctrl+Print exec --no-startup-id maim | xclip -selection clipboard -t image/png
+bindsym Ctrl+Print exec --no-startup-id flameshot full --clipboard 
 # Active window clipboard
-bindsym Ctrl+$mod+Print exec --no-startup-id maim --window $(xdotool getactivewindow) | xclip -selection clipboard -t image/png
+bindsym Ctrl+$mod+Print exec --no-startup-id flameshot screen -n 1 --clipboard 
 # Selection clipboard
-bindsym Ctrl+Shift+Print exec --no-startup-id maim --select | xclip -selection clipboard -t image/png
+bindsym Ctrl+Shift+Print exec --no-startup-id flameshot gui --clipboard
 
 # change focus
 bindsym $mod+h focus left
@@ -192,11 +194,10 @@ bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
 # Lock screen
-# bindsym $mod+x exec betterlockscreen -l  
-# bindsym $mod+x exec betterlockscreen -l pixel 
 # bindsym $mod+x exec gdmflexiserver
-# bindsym $mod+x exec betterlockscreen -l blur
 bindsym $mod+x exec betterlockscreen -l dim
+# bindsym $mod+x exec i3lock --color 2e3440
+
 
 # Suspend
 bindsym $mod+Shift+x exec systemctl suspend
