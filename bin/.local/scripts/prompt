@@ -1,0 +1,6 @@
+#!/bin/bash
+# Opens a basic yes/no prompt with rofi
+
+if [ "$(printf "no\nyes" | rofi -dmenu -p "$1" -l 2)" = "yes" ]; then
+   $2
+fi

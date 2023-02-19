@@ -7,10 +7,9 @@ secondary=HDMI-0
 
 if  xrandr | grep -q "$secondary d"; then
 	xrandr --output "$primary" --mode 1920x1080
-  xrandr --output "$secondary" --off
+    xrandr --output "$secondary" --off
 else
 	xrandr --output "$primary" --mode 1920x1080
-  xrandr --output "$secondary" --auto
-	xrandr --output "$secondary" --right-of "$primary" 
+    xrandr --output "$secondary" --auto
+    xrandr --output "$secondary" --right-of "$primary"
 fi
-

@@ -7,13 +7,13 @@
 - dmenu
 - feh
 - fd-find
+- flameshot
 - fzf
 - git
 - gnome-terminal
 - i3
 - i3blocks
 - MesloLSG Nerd Font
-- nautilus
 - nautilus
 - neofetch
 - neovim
@@ -29,7 +29,6 @@
 - tmux
 - udiskie
 - volumeicon
-- xclip
 - zsh
 
 # Screenshot
