@@ -1,4 +1,0 @@
-export $(dbus-launch)
-sh ~/.local/share/scripts/screencfg &
-sh ~/.local/share/scripts/wallpapercfg
-

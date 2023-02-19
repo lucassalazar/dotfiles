@@ -16,7 +16,7 @@ lsp.ensure_installed({
 	"golangci_lint_ls",	-- go
 	"solang",		-- solidity
 	"eslint",		-- eslint
-	"sumneko_lua",		-- lua
+	"lua_ls",		-- lua
 	"rust_analyzer", 	-- rust
 })
 

@@ -1,42 +1,20 @@
 # Dependencies
-## Tiling Window Managers
 - i3
 - i3blocks
-
-## Application Launchers
 - rofi
 - dmenu
-
-## File Managers
 - nautilus
 - thunar
-
-## Teminal Emulators
 - alacritty
 - gnome-terminal
-
-## Shell
 - zsh
-
-## Text Editors
 - neovim
-
-## Fonts
 - MesloLSG Nerd Font
-
-## Systray
 - nm-applet
 - udiskie
 - volumeicon
-- cbatticon
-- fbxkb
-- blueman
-
-## File Managers
+- blueberry
 - nautilus
-- thunar
-
-## Utilities
 - git
 - tmux
 - xclip
@@ -46,6 +24,12 @@
 - picom 
 - stow
 - fzf
+- autotiling
+- python-i3ipc
+- ripgrep
+- fd-find
+- asdf
+- nodejs
 
 # Screenshot
 ![Alt text](./screenshots/arch.png "Arch")

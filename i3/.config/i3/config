@@ -28,21 +28,20 @@ exec --no-startup-id dex --autostart --environment i3
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 
 # Check screen layout
-bindsym $mod+Shift+s exec --no-startup-id sh ~/.local/share/scripts/screencfg
+bindsym $mod+Shift+s exec --no-startup-id sh ~/.local/scripts/screencfg
 
 # Change keyboard layout
-bindsym $mod+Ctrl+k exec --no-startup-id sh ~/.local/share/scripts/keyboardcfg
+bindsym $mod+Ctrl+k exec --no-startup-id sh ~/.local/scripts/keyboardcfg
 
 # System tray GUIs
-exec_always --no-startup-id autotiling
-exec --no-startup-id setxkbmap br-abnt2
-exec --no-startup-id picom
+exec_always --no-startup-id autotiling 
+exec_always --no-startup-id picom
+exec_always --no-startup-id sh ~/.local/scripts/wallpapercfg
 exec --no-startup-id nm-applet
 exec --no-startup-id udiskie -t
 exec --no-startup-id volumeicon 
-exec --no-startup-id cbatticon
-exec --no-startup-id fbxkb
-exec --no-startup-id blueberry
+exec --no-startup-id blueberry 
+exec --no-startup-id setxkbmap br-abnt2
 
 # Brightness
 bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +10%
@@ -65,7 +64,7 @@ floating_modifier $mod
 bindsym $mod+Return exec alacritty
 
 # start a file manager window
-bindsym $mod+t exec thunar
+bindsym $mod+t exec nautilus 
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -190,7 +189,8 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 # bindsym $mod+x exec betterlockscreen -l  
 # bindsym $mod+x exec betterlockscreen -l dim
 # bindsym $mod+x exec betterlockscreen -l pixel 
-bindsym $mod+x exec betterlockscreen -l blur
+# bindsym $mod+x exec betterlockscreen -l blur
+bindsym $mod+x exec gdmflexiserver
 
 # Suspend
 bindsym $mod+Shift+x exec systemctl suspend

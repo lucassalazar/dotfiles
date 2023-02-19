@@ -74,6 +74,7 @@ ZSH_THEME="robbyrussell"
 plugins=(
 	git
 	zsh-autosuggestions
+    asdf
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -116,3 +117,5 @@ neofetch
 bindkey -s ^f "tmux-sessionizer\n"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# source /opt/asdf-vm/asdf.sh
