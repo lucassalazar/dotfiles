@@ -171,23 +171,23 @@ bindsym $mod+r mode "resize"
 ###---Start external scripts---###
 # Status bar
 bar {
-  i3bar_command i3bar
-  status_command i3blocks
-  strip_workspace_numbers yes
-  separator_symbol " "
-  position top
-  height 28
-  tray_padding 3 
-  colors{
-    background         #2e3440
-    statusline         #cdcecf
-    separator          #81a1c1
-    active_workspace   #81a1c1 #81a1c1 #2e3440
-    focused_workspace  #8cafd2 #8cafd2 #2e3440
-    inactive_workspace #3b4252 #3b4252 #cdcecf
-    urgent_workspace   #d06779 #d06779 #cdcecf
-    binding_mode       #b48ead #b48ead #2e3440
-  }
+    i3bar_command i3bar
+    status_command i3blocks
+    strip_workspace_numbers yes
+    separator_symbol " "
+    position top
+    height 28
+    tray_padding 3 
+    colors{
+        background         #2e3440
+        statusline         #cdcecf
+        separator          #81a1c1
+        active_workspace   #81a1c1 #81a1c1 #2e3440
+        focused_workspace  #8cafd2 #8cafd2 #2e3440
+        inactive_workspace #3b4252 #3b4252 #cdcecf
+        urgent_workspace   #d06779 #d06779 #cdcecf
+        binding_mode       #b48ead #b48ead #2e3440
+    }
 }
 
 # Activate auto tiling
@@ -196,11 +196,23 @@ exec_always --no-startup-id autotiling
 # Wi-Fi applet
 exec --no-startup-id nm-applet
 
-# Set wallpaper
-exec_always --no-startup-id ~/.local/scripts/wallpapercfg
+# Removable media manager
+exec --no-startup-id udiskie -t
+
+# Volume control applet
+exec --no-startup-id volumeicon
+
+# Bluetooth applet
+exec --no-startup-id blueberry-tray 
+
+# Set wallpaper and adjust monitors
+exec_always --no-startup-id ~/.local/scripts/monitorcfg
 
 # Activate compositor
 exec --no-startup-id picom -b
+
+# Enable touchpad tapping
+exec xinput set-prop "SynPS/2 Synaptics TouchPad" "libinput Tapping Enabled" 1
 
 ###---Cursor speed---###
 exec --no-startup-id xinput set-prop 11 295 1.9
@@ -258,10 +270,6 @@ bindsym $mod+t exec nautilus
 # they are included here as an example. Modify as you see fit.
 
 # System tray GUIs
-# exec --no-startup-id udiskie -t
-# exec --no-startup-id volumeicon 
-# exec --no-startup-id blueberry 
-# exec --no-startup-id setxkbmap br-abnt2
 
 # focus the parent container
 # bindsym $mod+a focus parent
