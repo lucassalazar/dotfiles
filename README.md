@@ -5,6 +5,7 @@
 - betterlockscreen
 - blueberry
 - dmenu
+- dunst
 - feh
 - fd-find
 - flameshot
