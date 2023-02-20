@@ -8,7 +8,7 @@
 - dmenu
 - dunst
 - feh
-- fd-find
+- fd
 - flameshot
 - fzf
 - git
