@@ -29,6 +29,7 @@
 - thunar
 - tmux
 - udiskie
+- upower
 - volumeicon
 - zsh
 

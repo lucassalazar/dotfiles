@@ -1,59 +1,59 @@
 [CPU]
 command=~/.config/i3blocks/cpu
 interval=5
-color=#b48ead
+color=#f7768e
 
 [GPU]
 command=~/.config/i3blocks/gpu
 interval=5
-color=#ebcb8b
+color=#9ece6a
 
 [RAM]
 command=~/.config/i3blocks/ram
 interval=5
-color=#a3be8c
+color=#e0af68
 
 [SWAP]
 command=~/.config/i3blocks/swap
 interval=5
-color=#81a1c1
+color=#7aa2f7
 
 [Disk]
 command=~/.config/i3blocks/disk
 interval=30
-color=#c895bf
+color=#ad8ee6
 
 [Net]
 command=~/.config/i3blocks/net enp2s0
 interval=5
-color=#d06f79
+color=#ff7a93
 
 [WiFi]
 command=~/.config/i3blocks/net wlan0
 interval=5
-color=#b1d196
+color=#b9f27c
 
 [Uptime]
 command=~/.config/i3blocks/uptime
 interval=60
-color=#bf616a
+color=#449dab
 
 [volume]
 command=~/.config/i3blocks/volume
 interval=1
-color=#8cafd2
+color=#ff9e64
 
 [Battery]
 command=~/.config/i3blocks/battery
 interval=30
-color=#f0d399
+color=#7da6ff
 
 [Keyboard]
 command=~/.config/i3blocks/keyboard
 interval=1
-color=#e5e9f0
+color=#bb9af7
 
 [date]
 command=~/.config/i3blocks/date
 interval=1
-color=#93ccdc
+color=#0db9d7

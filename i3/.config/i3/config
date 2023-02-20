@@ -7,6 +7,8 @@ font pango:MesloLGS NF Medium 10
 # Titlebar customization
 show_marks yes
 title_align center
+
+###---Nightfox---###
 client.focused          #8cafd2 #8cafd2 #2e3440 #cdcecf #8cafd2 
 client.focused_inactive #2e3440 #2e3440 #cdcecf #2e3440 #2e3440
 client.unfocused        #2e3440 #2e3440 #cdcecf #2e3440 #2e3440
@@ -179,8 +181,8 @@ bar {
     height 28
     tray_padding 3 
     colors{
-        # background         #2e3440
-	background 	   #121212
+        ###---Nightfox---###
+        background         #2e3440
         statusline         #cdcecf
         separator          #81a1c1
         active_workspace   #81a1c1 #81a1c1 #2e3440
@@ -265,24 +267,3 @@ bindsym Ctrl+Shift+Print exec --no-startup-id flameshot gui --clipboard
 ###---Launch programs---###
 bindsym $mod+Return exec alacritty
 bindsym $mod+t exec thunar
-
-# Start XDG autostart .desktop files using dex. See also
-# https://wiki.archlinux.org/index.php/XDG_Autostart
-# exec --no-startup-id dex --autostart --environment i3
-
-# The combination of xss-lock, nm-applet and pactl is a popular choice, so
-# they are included here as an example. Modify as you see fit.
-
-# System tray GUIs
-
-# focus the parent container
-# bindsym $mod+a focus parent
-
-# focus the child container
-# bindsym $mod+d focus child
-
-# Lock screen
-# bindsym $mod+x exec gdmflexiserver
-
-# Suspend
-# bindsym $mod+Shift+x exec systemctl suspend
