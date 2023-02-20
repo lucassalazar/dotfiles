@@ -193,11 +193,14 @@ bar {
 # Activate auto tiling
 exec_always --no-startup-id autotiling 
 
+# Notifications
+exec --no-startup-id dunst
+
 # Wi-Fi applet
 exec --no-startup-id nm-applet
 
 # Removable media manager
-exec --no-startup-id udiskie -t
+exec --no-startup-id udiskie -t -f thunar
 
 # Volume control applet
 exec --no-startup-id volumeicon
