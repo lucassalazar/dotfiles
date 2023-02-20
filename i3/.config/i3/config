@@ -250,14 +250,14 @@ bindsym $mod+Shift+b exec betterlockscreen -l dim
 # Fullscreen
 bindsym Print exec --no-startup-id flameshot full -p "/home/$USER/Pictures/Screenshots"
 # Active window
-bindsym $mod+Print exec --no-startup-id flameshot screen -n 1 -p "/home/$USER/Pictures/Screenshots"
+bindsym $mod+Print exec --no-startup-id flameshot screen -n 0 -p "/home/$USER/Pictures/Screenshots"
 # Selection
 bindsym Shift+Print exec --no-startup-id flameshot gui -p "/home/$USER/Pictures/Screenshots" 
 
 # Fullscreen clipboard
 bindsym Ctrl+Print exec --no-startup-id flameshot full --clipboard 
 # Active window clipboard
-bindsym Ctrl+$mod+Print exec --no-startup-id flameshot screen -n 1 --clipboard 
+bindsym Ctrl+$mod+Print exec --no-startup-id flameshot screen -n 0 --clipboard 
 # Selection clipboard
 bindsym Ctrl+Shift+Print exec --no-startup-id flameshot gui --clipboard
 
