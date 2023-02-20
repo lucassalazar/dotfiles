@@ -35,8 +35,8 @@
 
 # Screenshot
 
-## Fedora
-![Alt text](./screenshots/fedora.png "Fedora")
-
 ## Arch
 ![Alt text](./screenshots/arch.png "Arch")
+
+## Fedora
+![Alt text](./screenshots/fedora.png "Fedora")
