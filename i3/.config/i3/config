@@ -2,7 +2,7 @@
 set $mod Mod4
 
 ###---Styling---###
-font pango:MesloLGS NF 9
+font pango:MesloLGS NF Medium 10
 
 # Titlebar customization
 show_marks yes
@@ -179,7 +179,8 @@ bar {
     height 28
     tray_padding 3 
     colors{
-        background         #2e3440
+        # background         #2e3440
+	background 	   #121212
         statusline         #cdcecf
         separator          #81a1c1
         active_workspace   #81a1c1 #81a1c1 #2e3440
