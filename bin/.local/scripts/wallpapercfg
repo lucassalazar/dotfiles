@@ -1,4 +1,3 @@
 #!/bin/bash
 
-feh --bg-scale ~/Pictures/nord-desert.png
-# nitrogen --restore
+feh --bg-scale ~/Pictures/nightsky.jpg

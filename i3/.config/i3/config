@@ -260,7 +260,7 @@ bindsym Ctrl+Shift+Print exec --no-startup-id flameshot gui --clipboard
 
 ###---Launch programs---###
 bindsym $mod+Return exec alacritty
-bindsym $mod+t exec nautilus 
+bindsym $mod+t exec thunar
 
 # Start XDG autostart .desktop files using dex. See also
 # https://wiki.archlinux.org/index.php/XDG_Autostart
