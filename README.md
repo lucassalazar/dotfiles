@@ -1,5 +1,6 @@
 # Dependencies
 - alacritty
+- alsa-utils
 - asdf
 - autotiling
 - betterlockscreen
@@ -20,6 +21,7 @@
 - nm-applet
 - nodejs
 - picom
+- python-psutil
 - python-i3ipc
 - ripgrep
 - rofi
