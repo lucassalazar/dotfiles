@@ -2,7 +2,7 @@
 set $mod Mod4
 
 ###---Styling---###
-font pango:MesloLGS NF Medium 10
+font pango:Inconsolata NF 15
 
 # Titlebar customization
 show_marks yes

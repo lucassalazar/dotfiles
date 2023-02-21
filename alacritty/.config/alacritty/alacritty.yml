@@ -13,18 +13,18 @@ scrolling:
 
 font:
   normal:
-    family: "MesloLGS NF"
+    family: "Inconsolata NF"
     style: Medium
   bold:
-    family: "MesloLGS NF"
+    family: "Inconsolata NF"
     style: Bold
   italic: 
-    family: "MesloLGS NF"
+    family: "Inconsolata NF"
     style: MediumItalic
   bold_italic:
-    family: "MesloLGS NF"
+    family: "Inconsolata NF"
     style: BoldItalic
-  size: 8 
+  size: 9 
 
 draw_bold_text_with_bright_colors: true 
 
