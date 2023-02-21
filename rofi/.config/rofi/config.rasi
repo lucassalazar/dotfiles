@@ -1,6 +1,6 @@
 configuration {
   modes: "window,drun,run,ssh";
-	font: "Inconsolata NF 15";
+	font: "Inconsolata NF 12";
 	show-icons: true;
 	drun-match-fields: "name,generic,exec,categories";
 }
