@@ -16,7 +16,8 @@
 - gnome-terminal
 - i3
 - i3blocks
-- MesloLSG Nerd Font
+- Inconsolata NF
+- MesloLGS NF
 - neofetch
 - neovim
 - nm-applet
