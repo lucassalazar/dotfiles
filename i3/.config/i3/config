@@ -24,9 +24,6 @@ bindsym $mod+Shift+q kill
 # Start rofi (a program launcher)
 bindsym $mod+d exec "rofi -modes drun,run -show drun" 
 
-# Start dmenu (a program launcher)
-# bindsym $mod+d exec --no-startup-id dmenu_run -fn "MesloLGS NF-8"
-
 ###---Window Manipulation--###
 # Change focus
 bindsym $mod+h focus left
