@@ -2,6 +2,7 @@
 - alacritty
 - alsa-utils
 - asdf
+- atril
 - autotiling
 - betterlockscreen
 - blueberry
@@ -14,6 +15,7 @@
 - fzf
 - git
 - gnome-terminal
+- gpicview
 - i3
 - i3blocks
 - Inconsolata NF
