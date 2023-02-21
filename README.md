@@ -5,6 +5,7 @@
 - autotiling
 - betterlockscreen
 - blueberry
+- cbatticon
 - dmenu
 - dunst
 - feh
@@ -31,6 +32,7 @@
 - udiskie
 - upower
 - volumeicon
+- xorg-xinput
 - zsh
 
 # Screenshot
