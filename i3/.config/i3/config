@@ -204,7 +204,7 @@ exec --no-startup-id cbatticon
 exec --no-startup-id nm-applet
 
 # Removable media manager
-exec --no-startup-id udiskie -t -f thunar
+exec --no-startup-id udiskie -t -f pcmanfm
 
 # Bluetooth applet
 exec --no-startup-id blueberry-tray 
@@ -266,4 +266,4 @@ bindsym Ctrl+Shift+Print exec --no-startup-id flameshot gui --clipboard
 
 ###---Launch programs---###
 bindsym $mod+Return exec alacritty
-bindsym $mod+t exec thunar
+bindsym $mod+e exec pcmanfm 

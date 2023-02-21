@@ -22,13 +22,13 @@
 - neovim
 - nm-applet
 - nodejs
+- pcmanfm
 - picom
 - python-psutil
 - python-i3ipc
 - ripgrep
 - rofi
 - stow
-- thunar
 - tmux
 - udiskie
 - upower
