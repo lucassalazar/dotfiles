@@ -3,7 +3,7 @@ set $mod Mod4
 
 ###---Styling---###
 # font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
-font pango:Inconsolata NF 7
+font xft:Inconsolata NF Regular 10
 
 # Titlebar customization
 show_marks yes
@@ -25,7 +25,7 @@ floating_modifier $mod
 bindsym $mod+Shift+q kill
 
 # Start rofi (a program launcher)
-bindsym $mod+d exec "rofi -modes drun,run -show drun -dpi 142" 
+bindsym $mod+d exec "rofi -modes drun,run -show drun" 
 
 ###---Window Manipulation--###
 # Change focus
@@ -199,31 +199,28 @@ bar {
 exec_always --no-startup-id autotiling 
 
 # Notifications
-exec --no-startup-id dunst
+# exec --no-startup-id dunst
 
 # Battery
-exec --no-startup-id cbatticon
+# exec --no-startup-id cbatticon
 
 # Wi-Fi applet
-exec --no-startup-id nm-applet
+# exec --no-startup-id nm-applet
 
 # Removable media manager
-exec --no-startup-id udiskie -t -f pcmanfm
+# exec --no-startup-id udiskie -t -f pcmanfm
 
 # Bluetooth applet
-exec --no-startup-id blueberry-tray 
+# exec --no-startup-id blueberry-tray 
 
 # Set wallpaper and adjust monitors
 exec_always --no-startup-id ~/.local/scripts/monitorcfg
 
 # Activate compositor
-exec --no-startup-id picom -b
-
-# Enable touchpad tapping
-exec xinput set-prop "SynPS/2 Synaptics TouchPad" "libinput Tapping Enabled" 1
+# exec --no-startup-id picom -b
 
 # Volume control applet
-exec --no-startup-id sleep 5 && volumeicon
+# exec --no-startup-id sleep 5 && volumeicon
 
 ###---Cursor speed---###
 exec --no-startup-id xinput set-prop 11 295 1.9
