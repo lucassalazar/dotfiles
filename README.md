@@ -39,9 +39,5 @@
 - zsh
 
 # Screenshot
-
-## Arch
 ![Alt text](./screenshots/arch.png "Arch")
 
-## Fedora
-![Alt text](./screenshots/fedora.png "Fedora")
