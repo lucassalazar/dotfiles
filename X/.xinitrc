@@ -2,6 +2,7 @@
 
 xrdb -merge ~/.Xresources &
 nm-applet &
+cbatticon &
 picom -b &
 dunst &
 udiskie -t -f pcmanfm & 

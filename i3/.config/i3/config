@@ -2,7 +2,6 @@
 set $mod Mod4
 
 ###---Styling---###
-# font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 font xft:Inconsolata NF Regular 10
 
 # Titlebar customization
@@ -198,6 +197,9 @@ bar {
 # Activate auto tiling
 exec_always --no-startup-id autotiling 
 
+# Set wallpaper and adjust monitors
+exec_always --no-startup-id ~/.local/scripts/monitorcfg
+
 # Notifications
 # exec --no-startup-id dunst
 
@@ -212,9 +214,6 @@ exec_always --no-startup-id autotiling
 
 # Bluetooth applet
 # exec --no-startup-id blueberry-tray 
-
-# Set wallpaper and adjust monitors
-exec_always --no-startup-id ~/.local/scripts/monitorcfg
 
 # Activate compositor
 # exec --no-startup-id picom -b
