@@ -2,12 +2,15 @@
 set $mod Mod4
 
 ###---Styling---###
-font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
-font pango:Inconsolata NF 10
+# font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+font pango:Inconsolata NF 7
 
 # Titlebar customization
 show_marks yes
 title_align center
+# default_border normal 
+default_border pixel 2 
+default_floating_border normal
 
 ###---Nightfox---###
 client.focused          #8cafd2 #8cafd2 #2e3440 #cdcecf #8cafd2 
@@ -22,7 +25,7 @@ floating_modifier $mod
 bindsym $mod+Shift+q kill
 
 # Start rofi (a program launcher)
-bindsym $mod+d exec "rofi -modes drun,run -show drun" 
+bindsym $mod+d exec "rofi -modes drun,run -show drun -dpi 142" 
 
 ###---Window Manipulation--###
 # Change focus
@@ -62,7 +65,7 @@ bindsym $mod+Shift+t layout tabbed
 bindsym $mod+Shift+i layout toggle split
 
 # Toggle between tiling and floating windoww
-bindsym $mod+Shift+space floating toggle
+bindsym $mod+Shift+space floating toggle; [tiling con_id=__focused__] border pixel 2; [floating con_id=__focused__] border normal
 
 # Change the focus between tiling and floating windows
 bindsym $mod+space focus mode_toggle
@@ -173,12 +176,13 @@ bindsym $mod+r mode "resize"
 bar {
     i3bar_command i3bar
     status_command i3blocks
+    # status_command i3status
     strip_workspace_numbers yes
     separator_symbol " "
     position top
     height 28
     tray_padding 3 
-    colors{
+    colors {
         ###---Nightfox---###
         background         #2e3440
         statusline         #cdcecf
