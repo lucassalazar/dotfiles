@@ -33,11 +33,6 @@ command=~/.config/i3blocks/net wlan0
 interval=5
 color=#b9f27c
 
-[Uptime]
-command=~/.config/i3blocks/uptime
-interval=60
-color=#449dab
-
 [volume]
 command=~/.config/i3blocks/volume
 interval=1

@@ -206,61 +206,61 @@ NightFly: &NightFly
 Nordfox: &Nordfox
   # Default colors
   primary:
-    background: '0x2e3440'
-    foreground: '0xcdcecf'
+    background: '#2e3440'
+    foreground: '#cdcecf'
   # Normal colors
   normal:
-    black:   '0x3b4252'
-    red:     '0xbf616a'
-    green:   '0xa3be8c'
-    yellow:  '0xebcb8b'
-    blue:    '0x81a1c1'
-    magenta: '0xb48ead'
-    cyan:    '0x88c0d0'
-    white:   '0xe5e9f0'
+    black:   '#3b4252'
+    red:     '#bf616a'
+    green:   '#a3be8c'
+    yellow:  '#ebcb8b'
+    blue:    '#81a1c1'
+    magenta: '#b48ead'
+    cyan:    '#88c0d0'
+    white:   '#e5e9f0'
   # Bright colors
   bright:
-    black:   '0x465780'
-    red:     '0xd06f79'
-    green:   '0xb1d196'
-    yellow:  '0xf0d399'
-    blue:    '0x8cafd2'
-    magenta: '0xc895bf'
-    cyan:    '0x93ccdc'
-    white:   '0xe7ecf4'
+    black:   '#465780'
+    red:     '#d06f79'
+    green:   '#b1d196'
+    yellow:  '#f0d399'
+    blue:    '#8cafd2'
+    magenta: '#c895bf'
+    cyan:    '#93ccdc'
+    white:   '#e7ecf4'
   indexed_colors:
-    - { index: 16, color: '0xc9826b' }
-    - { index: 17, color: '0xbf88bc' }
+    - { index: 16, color: '#c9826b' }
+    - { index: 17, color: '#bf88bc' }
 
 ### Nightfox ###
 Nightfox: &Nightfox
   # Default colors
   primary:
-    background: '0x192330'
-    foreground: '0xcdcecf'
+    background: '#192330'
+    foreground: '#cdcecf'
   # Normal colors
   normal:
-    black:   '0x393b44'
-    red:     '0xc94f6d'
-    green:   '0x81b29a'
-    yellow:  '0xdbc074'
-    blue:    '0x719cd6'
-    magenta: '0x9d79d6'
-    cyan:    '0x63cdcf'
-    white:   '0xdfdfe0'
+    black:   '#393b44'
+    red:     '#c94f6d'
+    green:   '#81b29a'
+    yellow:  '#dbc074'
+    blue:    '#719cd6'
+    magenta: '#9d79d6'
+    cyan:    '#63cdcf'
+    white:   '#dfdfe0'
   # Bright colors
   bright:
-    black:   '0x575860'
-    red:     '0xd16983'
-    green:   '0x8ebaa4'
-    yellow:  '0xe0c989'
-    blue:    '0x86abdc'
-    magenta: '0xbaa1e2'
-    cyan:    '0x7ad4d6'
-    white:   '0xe4e4e5'
+    black:   '#575860'
+    red:     '#d16983'
+    green:   '#8ebaa4'
+    yellow:  '#e0c989'
+    blue:    '#86abdc'
+    magenta: '#baa1e2'
+    cyan:    '#7ad4d6'
+    white:   '#e4e4e5'
   indexed_colors:
-    - { index: 16, color: '0xf4a261' }
-    - { index: 17, color: '0xd67ad2' }
+    - { index: 16, color: '#f4a261' }
+    - { index: 17, color: '#d67ad2' }
 
 Matrix: &Matrix
   primary:
@@ -290,36 +290,36 @@ Matrix: &Matrix
 
 OneDark: &OneDark
   primary:
-    background: '0x1e2127'
-    foreground: '0xabb2bf'
-    bright_foreground: '0xe6efff'
+    background: '#1e2127'
+    foreground: '#abb2bf'
+    bright_foreground: '#e6efff'
   normal:
-    black:   '0x1e2127'
-    red:     '0xe06c75'
-    green:   '0x98c379'
-    yellow:  '0xd19a66'
-    blue:    '0x61afef'
-    magenta: '0xc678dd'
-    cyan:    '0x56b6c2'
-    white:   '0x828791'
+    black:   '#1e2127'
+    red:     '#e06c75'
+    green:   '#98c379'
+    yellow:  '#d19a66'
+    blue:    '#61afef'
+    magenta: '#c678dd'
+    cyan:    '#56b6c2'
+    white:   '#828791'
   bright:
-    black:   '0x5c6370'
-    red:     '0xe06c75'
-    green:   '0x98c379'
-    yellow:  '0xd19a66'
-    blue:    '0x61afef'
-    magenta: '0xc678dd'
-    cyan:    '0x56b6c2'
-    white:   '0xe6efff'
+    black:   '#5c6370'
+    red:     '#e06c75'
+    green:   '#98c379'
+    yellow:  '#d19a66'
+    blue:    '#61afef'
+    magenta: '#c678dd'
+    cyan:    '#56b6c2'
+    white:   '#e6efff'
   dim:
-    black:   '0x1e2127'
-    red:     '0xe06c75'
-    green:   '0x98c379'
-    yellow:  '0xd19a66'
-    blue:    '0x61afef'
-    magenta: '0xc678dd'
-    cyan:    '0x56b6c2'
-    white:   '0x828791'
+    black:   '#1e2127'
+    red:     '#e06c75'
+    green:   '#98c379'
+    yellow:  '#d19a66'
+    blue:    '#61afef'
+    magenta: '#c678dd'
+    cyan:    '#56b6c2'
+    white:   '#828791'
 
 TokyoNightStorm: &TokyoNightStorm
     # Default colors

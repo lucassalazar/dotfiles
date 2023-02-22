@@ -12,7 +12,7 @@ vim.g.loaded_netrwPlugin = 1
 vim.keymap.set("n", "<leader>e", vim.cmd.NvimTreeToggle)
 
 -- changes the color of the arrows
-vim.cmd([[ highlight NvimTreeIndentMarker guifg=#ebcb8b ]])
+-- vim.cmd([[ highlight NvimTreeIndentMarker guifg=#ebcb8b ]])
 
 nvimtree.setup({
     sort_by = "case_sensitive",
@@ -24,17 +24,17 @@ nvimtree.setup({
             },
         },
     },
-    renderer = {
-        group_empty = true,
-        icons = {
-            glyphs = {
-                folder = {
-                    arrow_closed = "",
-                    arrow_open = "",
-                },
-            },
-        },
-    },
+    -- renderer = {
+    --     group_empty = true,
+    --     icons = {
+    --         glyphs = {
+    --             folder = {
+    --                 arrow_closed = "",
+    --                 arrow_open = "",
+    --             },
+    --         },
+    --     },
+    -- },
     actions = {
         open_file = {
             window_picker = {

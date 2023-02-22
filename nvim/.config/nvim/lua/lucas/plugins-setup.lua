@@ -30,7 +30,8 @@ end
 
 return packer.startup(function(use)
     -- Packer can manage itself
-    use 'wbthomason/packer.nvim'
+    use('wbthomason/packer.nvim')
+
 
     use {
         'nvim-telescope/telescope.nvim', tag = '0.1.1',
@@ -40,6 +41,10 @@ return packer.startup(function(use)
 
     -- colorscheme
     use("EdenEast/nightfox.nvim")
+    use("navarasu/onedark.nvim")
+
+    -- color highlighter
+    use("norcalli/nvim-colorizer.lua")
 
     -- window maximizer
     use("szw/vim-maximizer")
