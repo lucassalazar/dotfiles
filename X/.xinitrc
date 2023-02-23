@@ -1,6 +1,7 @@
 #!/bin/sh
 
 xrdb -merge ~/.Xresources &
+
 setxkbmap es &
 nm-applet &
 cbatticon &
