@@ -23,6 +23,7 @@
 - i3blocks
 - Inconsolata NF
 - MesloLGS NF
+- mpv
 - neofetch
 - neovim
 - nm-applet
