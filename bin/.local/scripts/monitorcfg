@@ -7,11 +7,11 @@ secondary=HDMI-0
 
 if  xrandr | grep -q "$secondary d"; then
 	xrandr --output "$primary" --mode 1920x1080 --primary
-    xrandr --output "$secondary" --off &
-    exec ~/.local/scripts/wallpapercfg
+    xrandr --output "$secondary" --off
 else
 	xrandr --output "$primary" --mode 1920x1080 --primary
     xrandr --output "$secondary" --mode 1920x1080
-    xrandr --output "$secondary" --right-of "$primary" &
-    exec ~/.local/scripts/wallpapercfg
+    xrandr --output "$secondary" --right-of "$primary"
 fi
+
+exec ~/.local/scripts/wallpapercfg
