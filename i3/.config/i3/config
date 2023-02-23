@@ -23,8 +23,11 @@ floating_modifier $mod
 # Kill focused window
 bindsym $mod+Shift+q kill
 
-# Start rofi (a program launcher)
-bindsym $mod+d exec "rofi -modes drun,run -show drun" 
+# Gaps
+gaps inner 7
+# Enabling “Smart Gaps” means no gaps will be shown when there is
+# precisely one window or split container on the workspace.
+smart_gaps on
 
 ###---Window Manipulation--###
 # Change focus
@@ -265,5 +268,7 @@ bindsym Ctrl+$mod+Print exec --no-startup-id flameshot screen -n 0 --clipboard
 bindsym Ctrl+Shift+Print exec --no-startup-id flameshot gui --clipboard
 
 ###---Launch programs---###
+# Start rofi (a program launcher)
+bindsym $mod+d exec "rofi -modes drun,run -show drun" 
 bindsym $mod+Return exec alacritty
 bindsym $mod+e exec pcmanfm 
