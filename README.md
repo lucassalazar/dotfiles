@@ -1,3 +1,6 @@
+# Dotfiles
+![Alt text](./screenshots/arch.png "Arch")
+
 # Dependencies
 - alacritty
 - alsa-utils
@@ -37,7 +40,3 @@
 - volumeicon
 - xorg-xinput
 - zsh
-
-# Screenshot
-![Alt text](./screenshots/arch.png "Arch")
-
