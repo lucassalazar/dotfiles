@@ -29,6 +29,11 @@ gaps inner 7
 # precisely one window or split container on the workspace.
 smart_gaps on
 
+# Floating webcam
+for_window [title="video0 - mpv"] floating enable
+for_window [title="video0 - mpv"] sticky enable
+bindsym $mod+w exec --no-startup-id sh ~/.local/scripts/camtoggle
+
 ###---Window Manipulation--###
 # Change focus
 bindsym $mod+h focus left
@@ -201,7 +206,7 @@ bar {
 exec_always --no-startup-id autotiling 
 
 # Set wallpaper and adjust monitors
-exec_always --no-startup-id ~/.local/scripts/monitorcfg
+exec_always --no-startup-id sh ~/.local/scripts/monitorcfg
 
 # Notifications
 # exec --no-startup-id dunst
