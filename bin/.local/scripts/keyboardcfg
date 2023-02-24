@@ -1,9 +1,9 @@
 #!/bin/bash
 
+# us layout 
+layout1=us
 # br-abnt2 layout 
-layout1=br
-  # us layout 
-layout2=us
+layout2=br
 
 if setxkbmap -query | grep "$layout1"; then
   setxkbmap "$layout2"

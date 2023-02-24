@@ -19,7 +19,7 @@ export LESSHISTFILE="/dev/null"
 
 export MANPAGER="less -R --use-color -Dd+r -Du+b"
 
-export WINIT_X11_SCALE_FACTOR=2.02 alacritty
+export WINIT_X11_SCALE_FACTOR=1.75 alacritty
 
 # lf icons
 export LF_ICONS="\

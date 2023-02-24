@@ -22,6 +22,7 @@
 - i3
 - i3blocks
 - Inconsolata NF
+- lf
 - MesloLGS NF
 - mpv
 - neofetch

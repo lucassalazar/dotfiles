@@ -2,7 +2,7 @@
 
 xrdb -merge ~/.Xresources &
 
-setxkbmap es &
+setxkbmap us &
 nm-applet &
 cbatticon &
 picom -b &
