@@ -2,6 +2,7 @@
 alias v="$EDITOR"
 alias vim="$EDITOR"
 alias p="sudo pacman"
+alias lf="lf-ueberzug"
 
 # git aliases
 alias g="git"

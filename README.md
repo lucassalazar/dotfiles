@@ -12,13 +12,16 @@
 - cbatticon
 - dmenu
 - dunst
-- feh
 - fd
+- feh
+- ffmpeg
 - flameshot
 - fzf
+- ghostscript
 - git
 - gnome-terminal
 - gpicview
+- graphicsmagick
 - i3
 - i3blocks
 - Inconsolata NF
@@ -38,6 +41,7 @@
 - stow
 - tmux
 - udiskie
+- ueberzug
 - upower
 - volumeicon
 - xorg-xinput
