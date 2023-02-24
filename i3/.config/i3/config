@@ -25,6 +25,7 @@ bindsym $mod+Shift+q kill
 
 # Gaps
 gaps inner 7
+gaps outer 3
 # Enabling “Smart Gaps” means no gaps will be shown when there is
 # precisely one window or split container on the workspace.
 smart_gaps on
