@@ -16,7 +16,7 @@ cmd mkfile ${{
     $EDITOR $ans
 }}
 
-cmd setwallpaper %cp "$f" ~/Pictures/nightsky.jpg && feh --bg-scale "$f"
+cmd setwallpaper %cp "$f" ~/pictures/nightsky.jpg && feh --bg-scale "$f"
 
 # Archive bindings
 cmd unarchive ${{
@@ -60,7 +60,7 @@ map "'"
 map '"'
 map d
 
-map c $vscodium "$f"
+#map c $vscodium "$f"
 
 map au unarchive
 
