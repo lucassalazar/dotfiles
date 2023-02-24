@@ -8,7 +8,7 @@ font xft:Inconsolata NF Regular 10
 show_marks yes
 title_align center
 # default_border normal 
-default_border pixel 2 
+default_border pixel 1 
 default_floating_border normal
 
 ###---Nightfox---###
