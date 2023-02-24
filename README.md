@@ -40,6 +40,7 @@
 - rofi
 - stow
 - tmux
+- trash-cli
 - udiskie
 - ueberzug
 - upower
