@@ -5,7 +5,7 @@ export TERMINAL="alacritty"
 export BROWSER="brave"
 
 # Adds ~/.local/scripts and subfolders to $PATH
-export PATH="$PATH:${$(find ~/.local/scripts -maxdepth 1 -type d -printf %p:)%%:}"
+export PATH=$PATH:~/.local/scripts
 
 # cleaning up home folder
 export XDG_CONFIG_HOME="$HOME/.config"
