@@ -188,7 +188,7 @@ bar {
     separator_symbol " "
     position top
     height 28
-    tray_padding 3 
+    tray_padding 5
     colors {
         ###---Nightfox---###
         background         #2e3440
