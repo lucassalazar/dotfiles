@@ -204,7 +204,8 @@ bindsym $mod+r mode "resize"
 # }
 
 # Initialize polybar
-exec_always --no-startup-id sh ~/.config/polybar/launch.sh
+exec_always --no-startup-id sleep 2 && sh ~/.config/polybar/launch.sh
+bindsym $mod+p exec --no-startup-id sh ~/.config/polybar/launch.sh
 
 # Activate auto tiling
 exec_always --no-startup-id autotiling 
