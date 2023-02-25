@@ -34,6 +34,7 @@
 - nodejs
 - pcmanfm
 - picom
+- polybar
 - python-psutil
 - python-i3ipc
 - ripgrep
