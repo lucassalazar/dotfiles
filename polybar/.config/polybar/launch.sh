@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+# External monitor
+external=HDMI-0
+
 # Terminate already running bar instances
 killall polybar
 
@@ -7,8 +10,9 @@ killall polybar
 while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 
 # Launch polybar
-polybar main -c $(dirname $0)/config.ini &
-
-if [[ $(xrandr -q | grep 'HDMI-0 connected') ]]; then
-	polybar external -c $(dirname $0)/config.ini &
+if [[ $(xrandr | grep -q "$external d") ]]; then
+    polybar main -c $(dirname $0)/config.ini &
+else
+    polybar main -c $(dirname $0)/config.ini &
+    polybar external -c $(dirname $0)/config.ini &
 fi

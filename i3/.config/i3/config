@@ -149,9 +149,6 @@ bindsym $mod+Shift+c reload
 # Restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 
-# Exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
-
 # Resize window (you can also use the mouse for that)
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
@@ -204,7 +201,7 @@ bindsym $mod+r mode "resize"
 # }
 
 # Initialize polybar
-exec_always --no-startup-id sleep 2 && sh ~/.config/polybar/launch.sh
+exec_always --no-startup-id sh ~/.config/polybar/launch.sh
 bindsym $mod+p exec --no-startup-id sh ~/.config/polybar/launch.sh
 
 # Activate auto tiling
@@ -255,8 +252,9 @@ bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +10%
 bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 10%-
 
 ###---System Control---###
-bindsym $mod+shift+z exec sh ~/.local/scripts/prompt "Are you sure you would like to reboot?" "reboot"
-bindsym $mod+shift+x exec sh ~/.local/scripts/prompt "Are you sure you would like to suspend?" "systemctl suspend"
+bindsym $mod+Shift+e exec sh ~/.local/scripts/prompt "Are you sure you would like to logout?" "i3-msg exit"
+bindsym $mod+Shift+z exec sh ~/.local/scripts/prompt "Are you sure you would like to reboot?" "reboot"
+bindsym $mod+Shift+x exec sh ~/.local/scripts/prompt "Are you sure you would like to suspend?" "systemctl suspend"
 bindsym $mod+Shift+b exec betterlockscreen -l dim
 # bindsym $mod+Shift+b exec i3lock --color 2e3440
 
