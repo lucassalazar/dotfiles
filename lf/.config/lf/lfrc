@@ -16,7 +16,7 @@ cmd mkfile ${{
     $EDITOR $ans
 }}
 
-cmd setwallpaper %cp "$f" ~/pictures/nightsky.jpg && feh --bg-scale "$f"
+cmd setwallpaper %cp "$f" ~/pictures/wallpaper.jpg && feh --bg-scale "$f"
 
 # Archive bindings
 cmd unarchive ${{

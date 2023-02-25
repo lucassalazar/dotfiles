@@ -181,27 +181,30 @@ bindsym $mod+r mode "resize"
 
 ###---Start external scripts---###
 # Status bar
-bar {
-    i3bar_command i3bar
-    status_command i3blocks
+# bar {
+    # i3bar_command i3bar
+    # status_command i3blocks
     # status_command i3status
-    strip_workspace_numbers yes
-    separator_symbol " "
-    position top
-    height 28
-    tray_padding 5
-    colors {
-        ###---Nightfox---###
-        background         #2e3440
-        statusline         #cdcecf
-        separator          #81a1c1
-        active_workspace   #81a1c1 #81a1c1 #2e3440
-        focused_workspace  #8cafd2 #8cafd2 #2e3440
-        inactive_workspace #3b4252 #3b4252 #cdcecf
-        urgent_workspace   #d06779 #d06779 #cdcecf
-        binding_mode       #b48ead #b48ead #2e3440
-    }
-}
+#     strip_workspace_numbers yes
+#     separator_symbol " "
+#     position top
+#     height 28
+#     tray_padding 5
+#     colors {
+#         ###---Nightfox---###
+#         background         #2e3440
+#         statusline         #cdcecf
+#         separator          #81a1c1
+#         active_workspace   #81a1c1 #81a1c1 #2e3440
+#         focused_workspace  #8cafd2 #8cafd2 #2e3440
+#         inactive_workspace #3b4252 #3b4252 #cdcecf
+#         urgent_workspace   #d06779 #d06779 #cdcecf
+#         binding_mode       #b48ead #b48ead #2e3440
+#     }
+# }
+
+# Initialize polybar
+exec_always --no-startup-id sh ~/.config/polybar/launch.sh
 
 # Activate auto tiling
 exec_always --no-startup-id autotiling 
