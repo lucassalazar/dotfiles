@@ -1,5 +1,4 @@
 # default apps
-export ZSH="$HOME/.oh-my-zsh"
 export EDITOR="nvim"
 export TERMINAL="alacritty"
 export BROWSER="brave"
@@ -12,9 +11,9 @@ export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_STATE_HOME="$HOME/.local/state"
 export XDG_CACHE_HOME="$HOME/.cache"
+export ZDOTDIR="$HOME/.config/zsh"
 
 export NODE_REPL_HISTORY="$XDG_DATA_HOME"/node_repl_history
-
 export LESSHISTFILE="/dev/null"
 
 export MANPAGER="less -R --use-color -Dd+r -Du+b"
