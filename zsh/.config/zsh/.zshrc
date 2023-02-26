@@ -17,6 +17,7 @@ HISTFILE=$HOME/.cache/zsh/.zsh_history
 [ -f "${XDG_CONFIG_HOME}/shell/aliases" ] && source "${XDG_CONFIG_HOME}/shell/aliases"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+source ~/.asdf/asdf.sh
 source ~/.config/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/.config/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.config/zsh/powerlevel10k/powerlevel9k.zsh-theme
