@@ -14,9 +14,9 @@ export XDG_CACHE_HOME="$HOME/.cache"
 export ZDOTDIR="$HOME/.config/zsh"
 
 export NODE_REPL_HISTORY="$XDG_DATA_HOME"/node_repl_history
-export LESSHISTFILE="/dev/null"
 
-export MANPAGER="less -R --use-color -Dd+r -Du+b"
+export MANPAGER="nvim +Man!"
+export MANWIDTH=999
 
 export WINIT_X11_SCALE_FACTOR=1.75 alacritty
 

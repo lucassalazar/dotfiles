@@ -13,16 +13,16 @@ HISTSIZE=9999
 SAVEHIST=10000
 HISTFILE=$HOME/.cache/zsh/.zsh_history
 
-# Aliases
+# Sources
 [ -f "${XDG_CONFIG_HOME}/shell/aliases" ] && source "${XDG_CONFIG_HOME}/shell/aliases"
-
-bindkey -s ^f "tmux-sessionizer\n"
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 source ~/.config/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/.config/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
 source ~/.config/zsh/powerlevel10k/powerlevel9k.zsh-theme
+
+# keybinds
+bindkey -s ^f "tmux-sessionizer\n"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
