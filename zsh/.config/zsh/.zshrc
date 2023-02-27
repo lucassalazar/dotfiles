@@ -1,6 +1,6 @@
-# Runs neofetch in every terminal open 
 neofetch
 
+# Loads lightweight plugin manager
 [ -f "$HOME/.local/share/zap/zap.zsh" ] && source "$HOME/.local/share/zap/zap.zsh"
 
 # Enable colors
