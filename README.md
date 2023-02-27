@@ -19,8 +19,7 @@
 - fzf
 - ghostscript
 - git
-- gnome-terminal
-- gpicview
+- gnome-terminal 
 - graphicsmagick
 - i3
 - i3blocks
@@ -40,6 +39,7 @@
 - ripgrep
 - rofi
 - stow
+- sxiv
 - tmux
 - trash-cli
 - udiskie
@@ -47,4 +47,8 @@
 - upower
 - volumeicon
 - xorg-xinput
+- zathura
+- zathura-pdf-poppler
+- zathura-djvu
+- zathura-ps
 - zsh

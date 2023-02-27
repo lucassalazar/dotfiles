@@ -6,6 +6,8 @@ Xft.hinting: 1
 Xft.antialias: 1
 Xft.rgba: rgb
 
+Sxvi.background: black
+
 ! colors
 
 ! special
