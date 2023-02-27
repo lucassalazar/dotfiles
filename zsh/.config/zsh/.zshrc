@@ -30,7 +30,7 @@ plug "$HOME/.local/scripts/vim-zsh"
 plug "zsh-users/zsh-autosuggestions"
 plug "zsh-users/zsh-syntax-highlighting"
 plug "$HOME/.asdf/asdf.sh"
-plug "$HOMW/.fzf.zsh"
+plug "$HOME/.fzf.zsh"
 plug "$HOME/.config/zsh/.p10k.zsh"
 
 # Keybinds
