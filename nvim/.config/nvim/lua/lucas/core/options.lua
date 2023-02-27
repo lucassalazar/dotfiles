@@ -1,6 +1,6 @@
 local opt = vim.opt -- for conciseness
 
-opt.guicursor = ""
+opt.guicursor = "n-v-c-sm:block,i-ci-ve:ver25,r-cr-o:hor20"
 
 opt.nu = true
 opt.relativenumber = true
