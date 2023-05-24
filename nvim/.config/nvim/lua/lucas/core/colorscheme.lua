@@ -1,8 +1,8 @@
-local status, _ = pcall(vim.cmd, "colorscheme nordfox")
+local status, _ = pcall(vim.cmd, 'colorscheme nordfox')
 
 if not status then
-	print("Colorsheme not found")
-	return
+  print('Colorscheme not found')
+  return
 end
 
 pcall(vim.cmd, "hi Normal guibg=none ctermbg=none")

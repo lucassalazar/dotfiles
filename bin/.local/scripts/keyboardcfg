@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 # us layout 
 layout1=us

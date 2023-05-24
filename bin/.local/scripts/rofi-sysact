@@ -1,0 +1,13 @@
+#!/bin/sh
+
+case "$(printf " lock\n󰗽 logout\n󰁪 restart i3\n󱣻 hibernate\n󰤄 sleep\n󱩷 reboot\n shutdown\n󰀿 display off" | rofi -dmenu -p "Action" -l 8)" in
+	" lock") betterlockscreen -l dim ;;
+	"󰗽 logout") i3-msg exit ;;
+    "󰁪 restart i3") i3-msg restart ;;
+	"󱣻 hibernate") systemctl hibernate ;;
+	"󰤄 sleep") systemctl suspend ;;
+	"󱩷 reboot") reboot -i ;;
+	" shutdown") poweroff -i ;;
+	"󰀿 display off") xset dpms force off ;;
+	*) exit 1 ;;
+esac

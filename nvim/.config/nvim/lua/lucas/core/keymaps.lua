@@ -1,8 +1,24 @@
-local keymap = vim.keymap -- for conciseness
+-- [[ Basic Keymaps ]]
+local keymap = vim.keymap
 
-vim.g.mapleader = " "
+-- Keymaps for better default experience
+-- See `:help vim.keymap.set()`
+keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
+
+-- Remap for dealing with word wrap
+keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
+keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
+
+-- Diagnostic keymaps
+keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous diagnostic message' })
+keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next diagnostic message' })
+keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Open floating diagnostic message' })
+keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostics list' })
 
 keymap.set("n", "<leader>pv", vim.cmd.Ex)
+
+-- Toggle NvimTree
+keymap.set('n', '<leader>ft', vim.cmd.NvimTreeToggle)
 
 -- toggles splitted window maximization
 keymap.set("n", "<leader>sm", ":MaximizerToggle<CR>")
@@ -49,7 +65,7 @@ keymap.set("n", "<leader>f", vim.lsp.buf.format)
 -- keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
 
 -- search and replace
-keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+keymap.set("n", "<leader>sr", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { desc = "[S]earch and [R]eplace"})
 
 -- makes the file executable
 keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })

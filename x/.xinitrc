@@ -4,7 +4,7 @@
 xrdb -merge ~/.Xresources &
 
 # Display Resolution
-xrandr --output eDP-1-1 --primary --mode 1920x1080 &
+xrandr --output eDP-1-1 --mode 1920x1080 &
 
 # Wallpaper
 feh --bg-scale ~/pictures/wallpaper.jpg &
@@ -36,5 +36,7 @@ sleep 5 && volumeicon &
 # Screenshots
 flameshot &
 
-# exec dwm
 exec i3
+# exec awesome
+# exec dwm
+# while type dwm >/dev/null ; do dwm && continue || break ; done

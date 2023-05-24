@@ -24,9 +24,19 @@ zmodload zsh/complist
 compinit
 _comp_options+=(globdots)               # Include hidden files
 
+# Vim keys
+bindkey -v
+export KEYTIMEOUT=1
+
+# Use vim keys in tab complete menu:
+bindkey -M menuselect '^h' vi-backward-char
+bindkey -M menuselect '^k' vi-up-line-or-history
+bindkey -M menuselect '^l' vi-forward-char
+bindkey -M menuselect '^j' vi-down-line-or-history
+bindkey -v '^?' backward-delete-char
+
 # Plugins
 plug "romkatv/powerlevel10k"
-plug "$HOME/.local/scripts/vim-zsh"
 plug "zsh-users/zsh-autosuggestions"
 plug "zsh-users/zsh-syntax-highlighting"
 plug "$HOME/.asdf/asdf.sh"

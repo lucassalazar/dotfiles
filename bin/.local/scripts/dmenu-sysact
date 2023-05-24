@@ -1,0 +1,13 @@
+#!/bin/sh
+
+case "$(printf " lock\n󰗽 logout\n󰁪 renew awesome\n󱣻 hibernate\n󰤄 sleep\n󱩷 reboot\n shutdown\n󰀿 display off" | dmenu -fn 'Inconsolata NF-14' -i -p "Action: ")" in
+	" lock") betterlockscreen -l dim ;;
+	"󰗽 logout") pkill awesome ;;
+    "󰁪 renew awesome") echo 'awesome.restart()' | awesome-client ;;
+	"󱣻 hibernate") systemctl hibernate ;;
+	"󰤄 sleep") systemctl suspend ;;
+	"󱩷 reboot") reboot -i ;;
+	" shutdown") poweroff -i ;;
+	"󰀿 display off") xset dpms force off ;;
+	*) exit 1 ;;
+esac

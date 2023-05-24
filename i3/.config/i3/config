@@ -24,7 +24,7 @@ floating_modifier $mod
 bindsym $mod+Shift+q kill
 
 # Gaps
-gaps inner 7
+gaps inner 8
 gaps outer 3
 # Enabling “Smart Gaps” means no gaps will be shown when there is
 # precisely one window or split container on the workspace.
@@ -242,19 +242,17 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ to
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
 ###---Toggle external display---###
-bindsym $mod+x exec --no-startup-id sh ~/.local/scripts/monitorcfg
+bindsym $mod+x exec --no-startup-id monitorcfg
 
 ###---Toggle keyboard layout---###
-bindsym $mod+c exec --no-startup-id sh ~/.local/scripts/keyboardcfg
+bindsym $mod+c exec --no-startup-id keyboardcfg
 
 ###---Brightness---###
 bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +10%
 bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 10%-
 
 ###---System Control---###
-bindsym $mod+Shift+e exec sh ~/.local/scripts/prompt "Are you sure you would like to logout?" "i3-msg exit"
-bindsym $mod+Shift+z exec sh ~/.local/scripts/prompt "Are you sure you would like to reboot?" "reboot"
-bindsym $mod+Shift+x exec sh ~/.local/scripts/prompt "Are you sure you would like to suspend?" "systemctl suspend"
+bindsym $mod+Shift+x exec sh ~/.local/scripts/rofi-sysact
 bindsym $mod+Shift+b exec betterlockscreen -l dim
 # bindsym $mod+Shift+b exec i3lock --color 2e3440
 
