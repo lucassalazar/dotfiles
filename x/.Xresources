@@ -9,41 +9,39 @@ Xft.rgba: rgb
 Sxvi.background: black
 
 ! colors
-
-! special
-*.foreground:   #B8BEC9
-*.background:   #212121
-*.cursorColor:  #ECEFF4
-*.revCursorColor:  #555555
+*.foreground:   #bbc2cf
+*.background:   #282c34
+*.cursorColor:  #bbc2cf
 
 ! black
-*.color0:       #4C566A
-*.color8:       #6C768A
+*.color0:       #1c1f24
+*.color8:       #5b6268
 
 ! red
-*.color1:       #BF616A
-*.color9:       #af7370
+*.color1:       #ff6c6b
+*.color9:       #da8548
 
 ! green
-*.color2:       #A3BE8C
-*.color10:      #B5CEA8
+*.color2:       #98be65
+*.color10:      #4db5bd
 
 ! yellow
-*.color3:       #D7BA7D
-*.color11:      #E7cb93
+*.color3:       #da8548
+*.color11:      #ecbe7b
 
 ! blue
-*.color4:       #5e81ac
-*.color12:      #69A8C6
+*.color4:       #51afef
+*.color12:      #3071db
 
 ! magenta
-*.color5:       #B48EAD
-*.color13:      #939ede
+*.color5:       #c678dd
+*.color13:      #a9a1e1
 
 ! cyan
-*.color6:       #88c0d0
-*.color14:      #69BAC8
+*.color6:       #5699af
+*.color14:      #46d9ff
 
 ! white
-*.color7:       #ABB2BF
-*.color15:      #D8DEE9
+*.color7:       #abb2bf
+*.color15:      #dfdfdf
+
