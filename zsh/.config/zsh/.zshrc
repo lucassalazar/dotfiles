@@ -45,4 +45,5 @@ plug "$HOME/.config/zsh/.p10k.zsh"
 
 # Keybinds
 bindkey -s ^f "tmux-sessionizer\n"
+bindkey -s ^h "tmux-cht\n"
 bindkey -s ^e "lf\n"
