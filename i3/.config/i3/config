@@ -8,14 +8,25 @@ font xft:Inconsolata NF Regular 10
 show_marks yes
 title_align center
 # default_border normal 
-default_border pixel 1 
+default_border pixel 2
 default_floating_border normal
 
-###---Nightfox---###
-client.focused          #8cafd2 #8cafd2 #2e3440 #cdcecf #8cafd2 
-client.focused_inactive #2e3440 #2e3440 #cdcecf #2e3440 #2e3440
-client.unfocused        #2e3440 #2e3440 #cdcecf #2e3440 #2e3440
-client.urgent           #d06779 #d06779 #cdcecf #cdcecf #d06779
+# Colors
+set_from_resource $bg i3wm.background
+set_from_resource $fg i3wm.foreground
+set_from_resource $black i3wm.color0
+set_from_resource $red i3wm.color1
+set_from_resource $green i3wm.color2
+set_from_resource $yellow i3wm.color3
+set_from_resource $blue i3wm.color4
+set_from_resource $magenta i3wm.color5
+set_from_resource $cyan i3wm.color6
+set_from_resource $white i3wm.color7
+
+client.focused          $blue $blue $bg $white $blue 
+client.focused_inactive $bg $bg $white $bg $bg
+client.unfocused        $bg $bg $white $bg $bg
+client.urgent           $red $red $white $white $red
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -189,14 +200,14 @@ bindsym $mod+r mode "resize"
 #     tray_padding 5
 #     colors {
 #         ###---Nightfox---###
-#         background         #2e3440
-#         statusline         #cdcecf
-#         separator          #81a1c1
-#         active_workspace   #81a1c1 #81a1c1 #2e3440
-#         focused_workspace  #8cafd2 #8cafd2 #2e3440
-#         inactive_workspace #3b4252 #3b4252 #cdcecf
-#         urgent_workspace   #d06779 #d06779 #cdcecf
-#         binding_mode       #b48ead #b48ead #2e3440
+#         background         $bg
+#         statusline         $white
+#         separator          $white
+#         active_workspace   $green $green $bg
+#         focused_workspace  $green $green $bg
+#         inactive_workspace #bg #bg $white
+#         urgent_workspace   $red $red $white
+#         binding_mode       #b48ead #b48ead $bg
 #     }
 # }
 
