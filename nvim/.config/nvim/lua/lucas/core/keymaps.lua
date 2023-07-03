@@ -55,6 +55,9 @@ keymap.set("n", "Q", "<nop>")
 -- opens filesystem navigation (fzf) and tmux
 keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
 
+-- opens cheat sheet
+-- keymap.set("n", "<C-b>", "<cmd>silent !tmux split-window -h tmux-cht<CR>")
+
 -- indents the code
 keymap.set("n", "<leader>f", vim.lsp.buf.format)
 
@@ -65,7 +68,7 @@ keymap.set("n", "<leader>f", vim.lsp.buf.format)
 -- keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
 
 -- search and replace
-keymap.set("n", "<leader>sr", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { desc = "[S]earch and [R]eplace"})
+keymap.set("n", "<leader>sr", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { desc = "[S]earch and [R]eplace" })
 
 -- makes the file executable
 keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })

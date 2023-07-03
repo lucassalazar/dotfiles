@@ -18,6 +18,18 @@ lsp.setup_servers({
 	"eslint", -- eslint
 	"lua_ls", -- lua
 	"rust_analyzer", -- rust
+	"bashls", -- bash
+})
+
+-- Fix Undefined global 'vim'
+lsp.configure("lua_ls", {
+	settings = {
+		Lua = {
+			diagnostics = {
+				globals = { 'vim' }
+			}
+		}
+	}
 })
 
 local setup_cmp, cmp = pcall(require, "cmp")
@@ -35,7 +47,7 @@ local cmp_select = { behavior = cmp.SelectBehavior.Select }
 local cmp_mappings = lsp.defaults.cmp_mappings({
 	["<C-p>"] = cmp.mapping.select_prev_item(cmp_select),
 	["<C-n>"] = cmp.mapping.select_next_item(cmp_select),
-	["<C-y>"] = cmp.mapping.confirm({ select = true }),
+	["<Enter>"] = cmp.mapping.confirm({ select = true }),
 	["<C-Space>"] = cmp.mapping.complete(),
 })
 
@@ -44,12 +56,12 @@ cmp_mappings['<S-Tab>'] = nil
 
 lsp.setup_nvim_cmp({
 	mapping = cmp_mappings,
-	formatting = {
-		format = lspkind.cmp_format({
-			maxwidth = 50,
-			ellipsis_char = "..."
-		})
-	}
+	-- formatting = {
+	-- 	format = lspkind.cmp_format({
+	-- 		maxwidth = 50,
+	-- 		ellipsis_char = "..."
+	-- 	})
+	-- }
 })
 
 lsp.set_preferences({
