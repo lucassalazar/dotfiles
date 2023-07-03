@@ -94,6 +94,7 @@ require("lazy").setup({
     {
         "NTBBloodbath/doom-one.nvim",
     },
+    { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
     { "EdenEast/nightfox.nvim" },
     {
         -- Set lualine as statusline
