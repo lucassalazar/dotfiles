@@ -11,6 +11,7 @@
 - cbatticon
 - dmenu
 - dunst
+- exa
 - fd
 - feh
 - ffmpeg
