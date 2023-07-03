@@ -1,5 +1,4 @@
 # Dotfiles
-![Alt text](./screenshots/arch.png "Arch")
 
 # Dependencies
 - alacritty
