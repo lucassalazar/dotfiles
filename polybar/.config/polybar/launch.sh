@@ -10,7 +10,7 @@ killall polybar
 while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 
 # Launch polybar
-if [[ $(xrandr | grep -q "$external d") ]]; then
+if xrandr | grep -q "$external d"; then
     polybar main -c $(dirname $0)/config.ini &
 else
     polybar main -c $(dirname $0)/config.ini &

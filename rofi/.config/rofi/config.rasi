@@ -1,6 +1,6 @@
 configuration {
   modes: "window,drun,run,ssh";
-	font: "Inconsolata NF Regular 10";
+	font: "JetBrainsMono Nerd Font Regular 8";
 	show-icons: true;
 	drun-match-fields: "name,generic,exec,categories";
 }
