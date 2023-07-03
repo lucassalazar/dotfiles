@@ -1,69 +1,83 @@
-*{
-    color: #cdcecf;
-    background-color: #2e344000;
-    background: #2e3440ee;
+* {
+    background-color: #282c3400;
+    background: #282c34ee;
+
+    blue: #51afef;
+    text-color: #bbc2cf;
 }
 
-#window {
+window {
     background-color: @background;
-    border-color: #8cafd2;
+    border-color: @blue;
     border: 2;
     padding: 4;
 }
 
-#message {
+mainbox {
+    background-color: @background-color;
+    spacing: 0px;
+}
+
+message {
     border: 2;
     padding: 4;
 }
 
-#listview {
-    fixed-height: 0;
+listview {
+    fixed-height: true;
+    dynamic: true;
+    spacing: 5px;
+    padding: 1px 0px 0px 0px;
+    margin: 0px 0px 1px 0px;
     scrollbar: true;
+    background: @background;
 }
 
-#element {
+element {
     padding: 4;
     margin: 0 4;
 }
 
-#element-text {
+element-text {
     background-color: inherit;
     text-color: inherit;
 }
 
-#element.selected.normal {
-    background-color: #8cafd2;
-    text-color: #2e3440;
+element.selected.normal {
+    background-color: @blue;
+    text-color: @background;
 }
 
-#element-icon {
-  size: 2ch;
+element-icon {
+    size: 2ch;
 }
 
-#scrollbar {
-    handle-color: #8cafd2;
+scrollbar {
+    handle-color: @blue;
     handle-width: 4px;
 }
 
-#button {
+button {
     spacing: 4;
 }
 
-#button.selected {
-    background-color: #8cafd2;
+button.selected {
+    background-color: @blue;
 }
 
-#inputbar {
-    background-color:#3b4252;
+inputbar {
+    background-color: @background-color;
     padding: 4;
     margin: 4;
 }
 
-#inputbar {
-    children:[prompt,textbox-prompt-colon,entry,case-indicator];
+inputbar {
+    children: [prompt, textbox-prompt-colon, entry, case-indicator];
 }
 
-#textbox-prompt-colon {
+textbox-prompt-colon {
+    padding: 0px;
     expand: false;
-    str: ":";
+    str: "->";
+    background-color: @background-color;
 }
