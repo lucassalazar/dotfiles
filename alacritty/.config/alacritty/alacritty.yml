@@ -13,16 +13,16 @@ scrolling:
 
 font:
   normal:
-    family: "JetBrainsMono Nerd Font"
+    family: "SauceCodePro Nerd Font"
     style: Regular
   bold:
-    family: "JetBrainsMono Nerd Font"
+    family: "SauceCodePro Nerd Font"
     style: Bold
   italic: 
-    family: "JetBrainsMono Nerd Font"
+    family: "SaudeCodePro Nerd Font"
     style: RegularItalic
   bold_italic:
-    family: "JetBrainsMono Nerd Font"
+    family: "SauceCodePro Nerd Font"
     style: BoldItalic
   size: 6
 
