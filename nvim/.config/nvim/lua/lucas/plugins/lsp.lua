@@ -11,7 +11,7 @@ lsp.setup_servers({
 	"html", -- html
 	"tailwindcss", -- tawilwind css
 	"jsonls", -- json
-	"jedi_language_server", -- python
+	"pyright", -- python
 	"clangd", -- c/c++
 	"golangci_lint_ls", -- go
 	"solang", -- solidity

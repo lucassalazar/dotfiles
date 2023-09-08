@@ -56,7 +56,7 @@ keymap.set("n", "Q", "<nop>")
 keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
 
 -- opens cheat sheet
--- keymap.set("n", "<C-b>", "<cmd>silent !tmux split-window -h tmux-cht<CR>")
+keymap.set("n", "<leader>cs", "<cmd>silent !tmux split-window -h tmux-cht<CR>")
 
 -- indents the code
 keymap.set("n", "<leader>f", vim.lsp.buf.format)

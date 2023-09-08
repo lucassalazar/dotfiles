@@ -147,6 +147,8 @@ require("lazy").setup({
     "windwp/nvim-autopairs",
     "christoomey/vim-tmux-navigator",
 
+    "prisma/vim-prisma",
+
     -- Discord
     "andweeb/presence.nvim",
 }, {})
