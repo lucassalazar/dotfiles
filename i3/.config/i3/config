@@ -1,17 +1,36 @@
+# Set monitor variables
+set $main_monitor eDP-1-1
+set $external_monitor HDMI-0
+
 # Set modifier key as "super"
 set $mod Mod4
 
-###---Styling---###
-font xft:Inconsolata NF Regular 10
+# Set font
+font pango: SauceCodePro Nerd Font 10
 
 # Titlebar customization
 show_marks yes
 title_align center
+
 # default_border normal 
 default_border pixel 2
 default_floating_border normal
 
-# Colors
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+# Gaps
+gaps inner 8
+gaps outer 3
+
+# Enabling “Smart Gaps” means no gaps will be shown when there is
+# precisely one window or split container on the workspace.
+smart_gaps off
+
+# Set cursor speed
+exec --no-startup-id xinput set-prop 11 295 1.9
+
+# Set style
 set_from_resource $bg i3wm.background
 set_from_resource $fg i3wm.foreground
 set_from_resource $black i3wm.color0
@@ -23,71 +42,24 @@ set_from_resource $magenta i3wm.color5
 set_from_resource $cyan i3wm.color6
 set_from_resource $white i3wm.color7
 
-client.focused          $blue $blue $bg $white $blue 
-client.focused_inactive $bg $bg $white $bg $bg
-client.unfocused        $bg $bg $white $bg $bg
-client.urgent           $red $red $white $white $red
+# class                 border  bg      text    indicator   child_border
+client.focused          $blue   $blue   $bg     $white      $blue 
+client.focused_inactive $bg     $bg     $white  $bg         $bg
+client.unfocused        $bg     $bg     $white  $bg         $bg
+client.urgent           $red    $red    $white  $white      $red
+client.placeholder      $black  $bg     $white  $black      $bg
 
-# Use Mouse+$mod to drag floating windows to their wanted position
-floating_modifier $mod
-
-# Kill focused window
-bindsym $mod+Shift+q kill
-
-# Gaps
-gaps inner 8
-gaps outer 3
-# Enabling “Smart Gaps” means no gaps will be shown when there is
-# precisely one window or split container on the workspace.
-smart_gaps on
-
-# Floating webcam
-for_window [title="video0 - mpv"] floating enable
-for_window [title="video0 - mpv"] sticky enable
-bindsym $mod+w exec --no-startup-id sh ~/.local/scripts/camtoggle
-
-###---Window Manipulation--###
-# Change focus
-bindsym $mod+h focus left
-bindsym $mod+j focus down
-bindsym $mod+k focus up
-bindsym $mod+l focus right
-
-# Change the focus with the cursor keys
-bindsym $mod+Left focus left
-bindsym $mod+Down focus down
-bindsym $mod+Up focus up
-bindsym $mod+Right focus right
-
-# Move focused window
-bindsym $mod+Shift+h move left
-bindsym $mod+Shift+j move down
-bindsym $mod+Shift+k move up
-bindsym $mod+Shift+l move right
-
-# Move focused windows the cursor keys
-bindsym $mod+Shift+Left move left
-bindsym $mod+Shift+Down move down
-bindsym $mod+Shift+Up move up
-bindsym $mod+Shift+Right move right
-
-# Enter fullscreen mode for the focused container
-bindsym $mod+f fullscreen toggle
-
-# Toggle stacking layout
-bindsym $mod+Shift+s layout stacking
-
-# Toggle tabbed layout
-bindsym $mod+Shift+t layout tabbed
-
-# Toggle layout split
-bindsym $mod+Shift+i layout toggle split
-
-# Toggle between tiling and floating windoww
-bindsym $mod+Shift+space floating toggle; [tiling con_id=__focused__] border pixel 2; [floating con_id=__focused__] border normal
-
-# Change the focus between tiling and floating windows
-bindsym $mod+space focus mode_toggle
+# Set workspaces
+workspace 1 output $main_monitor
+workspace 2 output $main_monitor
+workspace 3 output $main_monitor
+workspace 4 output $main_monitor
+workspace 5 output $main_monitor
+workspace 6 output $external_monitor
+workspace 7 output $external_monitor
+workspace 8 output $external_monitor
+workspace 9 output $external_monitor
+workspace 10 output $external_monitor
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
@@ -147,8 +119,8 @@ bindsym $mod+Control+j move workspace to output down
 bindsym $mod+Control+k move workspace to output up
 
 # Moves container to the active workspace on another screen
-bindsym $mod+Shift+Control+m move container to output primary
-bindsym $mod+Shift+Control+s move container to output HDMI-1
+bindsym $mod+Shift+Control+m move container to output $main_monitor
+bindsym $mod+Shift+Control+s move container to output $external_monitor
 bindsym $mod+Shift+Control+l move container to output right
 bindsym $mod+Shift+Control+h move container to output left
 bindsym $mod+Shift+Control+j move container to output down
@@ -160,123 +132,106 @@ bindsym $mod+Shift+c reload
 # Restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 
+# Kill focused window
+bindsym $mod+Shift+q kill
+
+# Reset xrandr config
+bindsym $mod+x exec --no-startup-id sh ~/.local/scripts/monitorcfg
+
+# Toggle keyboard layout
+bindsym $mod+c exec --no-startup-id sh ~/.local/scripts/keyboardcfg
+
+# Floating webcam
+for_window [title="video0 - mpv"] floating enable
+for_window [title="video0 - mpv"] sticky enable
+bindsym $mod+w exec --no-startup-id sh ~/.local/scripts/camtoggle
+
+###---Window Manipulation--###
+# Change focus
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+
+# Change the focus with the cursor keys
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# Move focused window
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+
+# Move focused windows the cursor keys
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+# Enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen toggle
+
+# Toggle stacking layout
+bindsym $mod+Shift+s layout stacking
+
+# Toggle tabbed layout
+bindsym $mod+Shift+t layout tabbed
+
+# Toggle layout split
+bindsym $mod+Shift+i layout toggle split
+
+# Toggle between tiling and floating windoww
+bindsym $mod+Shift+space floating toggle; [tiling con_id=__focused__] border pixel 2; [floating con_id=__focused__] border normal
+
+# Change the focus between tiling and floating windows
+bindsym $mod+space focus mode_toggle
+
 # Resize window (you can also use the mouse for that)
 mode "resize" {
-        # These bindings trigger as soon as you enter the resize mode
+    bindsym h resize shrink width 10 px or 10 ppt
+    bindsym j resize grow height 10 px or 10 ppt
+    bindsym k resize shrink height 10 px or 10 ppt
+    bindsym l resize grow width 10 px or 10 ppt
 
-        # Pressing left will shrink the window’s width.
-        # Pressing right will grow the window’s width.
-        # Pressing up will shrink the window’s height.
-        # Pressing down will grow the window’s height.
-        bindsym h resize shrink width 10 px or 10 ppt
-        bindsym j resize grow height 10 px or 10 ppt
-        bindsym k resize shrink height 10 px or 10 ppt
-        bindsym l resize grow width 10 px or 10 ppt
+    # same bindings, but for the arrow keys
+    bindsym Left resize shrink width 10 px or 10 ppt
+    bindsym Down resize grow height 10 px or 10 ppt
+    bindsym Up resize shrink height 10 px or 10 ppt
+    bindsym Right resize grow width 10 px or 10 ppt
 
-        # same bindings, but for the arrow keys
-        bindsym Left resize shrink width 10 px or 10 ppt
-        bindsym Down resize grow height 10 px or 10 ppt
-        bindsym Up resize shrink height 10 px or 10 ppt
-        bindsym Right resize grow width 10 px or 10 ppt
-
-        # back to normal: Enter or Escape or $mod+r
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-        bindsym $mod+r mode "default"
+    # back to normal: Enter or Escape or $mod+r
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+    bindsym $mod+r mode "default"
 }
 
 bindsym $mod+r mode "resize"
 
-###---Start external scripts---###
-# Status bar
-# bar {
-    # i3bar_command i3bar
-    # status_command i3blocks
-    # status_command i3status
-#     strip_workspace_numbers yes
-#     separator_symbol " "
-#     position top
-#     height 28
-#     tray_padding 5
-#     colors {
-#         ###---Nightfox---###
-#         background         $bg
-#         statusline         $white
-#         separator          $white
-#         active_workspace   $green $green $bg
-#         focused_workspace  $green $green $bg
-#         inactive_workspace #bg #bg $white
-#         urgent_workspace   $red $red $white
-#         binding_mode       #b48ead #b48ead $bg
-#     }
-# }
-
-# Initialize polybar
-exec_always --no-startup-id sh ~/.config/polybar/launch.sh
-bindsym $mod+p exec --no-startup-id sh ~/.config/polybar/launch.sh
-
-# Activate auto tiling
-exec_always --no-startup-id autotiling 
-
-# Set wallpaper and adjust monitors
-exec_always --no-startup-id sh ~/.local/scripts/monitorcfg
-
-# Notifications
-# exec --no-startup-id dunst
-
-# Battery
-# exec --no-startup-id cbatticon
-
-# Wi-Fi applet
-# exec --no-startup-id nm-applet
-
-# Removable media manager
-# exec --no-startup-id udiskie -t -f pcmanfm
-
-# Bluetooth applet
-# exec --no-startup-id blueberry-tray 
-
-# Activate compositor
-# exec --no-startup-id picom -b
-
-# Volume control applet
-# exec --no-startup-id sleep 5 && volumeicon
-
-###---Cursor speed---###
-exec --no-startup-id xinput set-prop 11 295 1.9
-
-###---Audio controls---###
+### Audio controls ###
 # Use pactl to adjust volume in PulseAudio.
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
-###---Toggle external display---###
-bindsym $mod+x exec --no-startup-id monitorcfg
-
-###---Toggle keyboard layout---###
-bindsym $mod+c exec --no-startup-id keyboardcfg
-
-###---Brightness---###
+### Brightness ###
 bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +10%
 bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 10%-
 
-###---System Control---###
+### System Control ###
 bindsym $mod+Shift+x exec sh ~/.local/scripts/rofi-sysact
 bindsym $mod+Shift+b exec betterlockscreen -l dim
-# bindsym $mod+Shift+b exec i3lock --color 2e3440
 
-###---Calculator---###
-
-###---Screenshot---###
+### Screenshot ###
 # Fullscreen
 bindsym Print exec --no-startup-id flameshot full -p "/home/$USER/pictures/screenshots"
 # Active window
 bindsym $mod+Print exec --no-startup-id flameshot screen -n 0 -p "/home/$USER/pictures/screenshots"
 # Selection
 bindsym Shift+Print exec --no-startup-id flameshot gui -p "/home/$USER/pictures/screenshots" 
-
 # Fullscreen clipboard
 bindsym Ctrl+Print exec --no-startup-id flameshot full --clipboard 
 # Active window clipboard
@@ -284,8 +239,10 @@ bindsym Ctrl+$mod+Print exec --no-startup-id flameshot screen -n 0 --clipboard
 # Selection clipboard
 bindsym Ctrl+Shift+Print exec --no-startup-id flameshot gui --clipboard
 
-###---Launch programs---###
+### Launch programs ###
 # Start rofi (a program launcher)
 bindsym $mod+d exec "rofi -modes drun,run -show drun" 
-bindsym $mod+Return exec alacritty
+bindsym $mod+Return exec alacritty 
 bindsym $mod+e exec pcmanfm 
+
+exec_always --no-startup-id ~/.config/i3/autostart.sh

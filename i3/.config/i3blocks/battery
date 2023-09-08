@@ -27,4 +27,4 @@ else:
     if battery>80: battermoji="\ufd0d"
     if battery>90: battermoji="\ufd0e"
     if battery==100: battermoji="\ufd05"
-print(f"{battery}% {battermoji} ")
+print(f"{battery}% {battermoji}")
