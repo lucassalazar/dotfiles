@@ -1,42 +1,37 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 # Load Xresources
 xrdb -merge ~/.Xresources &
 
-# Display Resolution
-xrandr --output eDP-1-1 --mode 1920x1080 &
-
-# Wallpaper
-feh --bg-scale ~/pictures/wallpaper.jpg &
-
 # Compositor
-picom -f &
-
-# Sets the keyboard layout to english
-setxkbmap us &
-
-# Network manager applet
-nm-applet &
-
-# Battery systray icon
-cbatticon &
+picom -f --config ~/.config/picom/picom.conf --vsync &
 
 # Notifications
 dunst &
 
-# Removable media manager
-udiskie -t -f pcmanfm & 
+# Sets the keyboard layout to english
+setxkbmap us &
 
-# Bluetooth systray icon
+# Network Manager
+nm-applet &
+
+# Battery Utility
+cbatticon &
+
+# Removable Media Utility
+udiskie -t -f pcmanfm &
+
+# Bluetooth Manager
 blueberry-tray &
 
-# Volume systray icon
-sleep 5 && volumeicon &
+# Volume Utility
+volumeicon &
 
-# Screenshots
+# Screenshot Utility
 flameshot &
 
 exec i3
+# exec qtile start
 # exec awesome
 # exec dwm
 # while type dwm >/dev/null ; do dwm && continue || break ; done
