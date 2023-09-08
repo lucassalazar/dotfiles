@@ -5,7 +5,7 @@ case "$(printf " lock\n󰗽 logout\n󰁪 restart i3\n󱣻 hibernate\n󰤄 sle
 	"󰗽 logout") i3-msg exit ;;
     "󰁪 restart i3") i3-msg restart ;;
 	"󱣻 hibernate") systemctl hibernate ;;
-	"󰤄 sleep") systemctl suspend ;;
+	"󰤄 sleep") betterlockscreen -l dim & systemctl suspend ;;
 	"󱩷 reboot") reboot -i ;;
 	" shutdown") poweroff -i ;;
 	"󰀿 display off") xset dpms force off ;;

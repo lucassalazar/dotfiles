@@ -11,7 +11,7 @@ if  xrandr | grep -q "$external d"; then
 else
 	xrandr --output "$main" --mode 1920x1080 --primary
     xrandr --output "$external" --mode 1920x1080 
-    xrandr --output "$external" --right-of "$main"
+    xrandr --output "$external" --left-of "$main"
 fi
 
 exec ~/.local/scripts/wallpapercfg
