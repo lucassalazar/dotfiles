@@ -1,154 +1,132 @@
--- Install package manager
---    https://github.com/folke/lazy.nvim
---    `:help lazy.nvim.txt` for more info
-local lazypath = vim.fn.stdpath "data" .. "/lazy/lazy.nvim"
-if not vim.loop.fs_stat(lazypath) then
-    vim.fn.system {
-        "git",
-        "clone",
-        "--filter=blob:none",
-        "https://github.com/folke/lazy.nvim.git",
-        "--branch=stable", -- latest stable release
-        lazypath,
-    }
+-- auto install packer if not installed
+local ensure_packer = function()
+    local fn = vim.fn
+    local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
+    if fn.empty(fn.glob(install_path)) > 0 then
+        fn.system({ "git", "clone", "--depth", "1", "https://github.com/wbthomason/packer.nvim", install_path })
+        vim.cmd([[packadd packer.nvim]])
+        return true
+    end
+    return false
 end
-vim.opt.rtp:prepend(lazypath)
 
-require("lazy").setup({
-    -- NOTE: First, some plugins that don"t require any configuration
+local packer_bootstrap = ensure_packer() -- true if packer was just installed
+
+-- autocommand that reloads neovim and installs/updates/removes plugins
+-- when file is saved
+vim.cmd([[
+  augroup packer_user_config
+    autocmd!
+    autocmd BufWritePost plugins-setup.lua source <afile> | PackerSync
+  augroup end
+]])
+
+-- import packer safely
+local setup_packer, packer = pcall(require, "packer")
+if not setup_packer then
+    return
+end
+
+return packer.startup(function(use)
+    -- Packer can manage itself
+    use 'wbthomason/packer.nvim'
 
     -- Fuzzy Finder (files, lsp, etc)
-    { "nvim-telescope/telescope.nvim", branch = "0.1.x", dependencies = { "nvim-lua/plenary.nvim" } },
+    use {
+        "nvim-telescope/telescope.nvim", branch = "0.1.x",
+        requires = { { "nvim-lua/plenary.nvim" } }
+    }
 
-    -- Fuzzy Finder Algorithm which requires local dependencies to be built.
-    -- Only load if `make` is available. Make sure you have the system
-    -- requirements installed.
-    {
-        "nvim-telescope/telescope-fzf-native.nvim",
-        -- NOTE: If you are having trouble with this installation,
-        --       refer to the README for telescope-fzf-native for more instructions.
-        build = "make",
-        cond = function()
-            return vim.fn.executable "make" == 1
-        end,
-    },
+    use("NTBBloodbath/doom-one.nvim")
 
-    -- Git related plugins
-    { "tpope/vim-fugitive" },
-    { "tpope/vim-rhubarb" },
+    use({
+        "folke/trouble.nvim",
+        config = function()
+            require("trouble").setup {
+                icons = false,
+                -- your configuration comes here
+                -- or leave it empty to use the default settings
+                -- refer to the configuration section below
+            }
+        end
+    })
 
-    -- Detect tabstop and shiftwidth automatically
-    -- { "tpope/vim-sleuth" },
+    -- Highlight, edit, and navigate code
+    use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
+    use("nvim-treesitter/playground")
+    use("mbbill/undotree")
+    use("tpope/vim-fugitive")
+    use("nvim-treesitter/nvim-treesitter-context")
 
-    -- LSP
-    {
-        "VonHeikemen/lsp-zero.nvim",
-        branch = "v2.x",
-        dependencies = {
+    use {
+        'VonHeikemen/lsp-zero.nvim',
+        branch = 'v2.x',
+        requires = {
             -- LSP Support
-            { "neovim/nvim-lspconfig" }, -- Required
-            { -- Optional
-                "williamboman/mason.nvim",
-                build = function()
-                    pcall(vim.cmd, "MasonUpdate")
-                end,
-            },
-            { "williamboman/mason-lspconfig.nvim" }, -- Optional
+            { 'neovim/nvim-lspconfig' },             -- Required
+            { 'williamboman/mason.nvim' },           -- Optional
+            { 'williamboman/mason-lspconfig.nvim' }, -- Optional
 
             -- Autocompletion
-            { "hrsh7th/nvim-cmp" }, -- Required
-            { "hrsh7th/cmp-nvim-lsp" }, -- Required
-            { "hrsh7th/cmp-buffer" }, -- Optional
-            { "hrsh7th/cmp-path" }, -- Optional
-            { "hrsh7th/cmp-nvim-lua" }, -- Optional
+            { 'hrsh7th/nvim-cmp' },     -- Required
+            { 'hrsh7th/cmp-nvim-lsp' }, -- Required
+            { 'hrsh7th/cmp-buffer' },   -- Optional
+            { 'hrsh7th/cmp-path' },     -- Optional
+            { 'hrsh7th/cmp-nvim-lua' }, -- Optional
             { "onsails/lspkind.nvim" }, -- vs-code like icons for autocompletion
 
             -- Snippets
-            { "L3MON4D3/LuaSnip" }, -- Required
+            { 'L3MON4D3/LuaSnip' },         -- Required
+            -- { 'rafamadriz/friendly-snippets' },
             { "saadparwaiz1/cmp_luasnip" }, -- Optional
         }
-    },
+    }
+
+    use("folke/zen-mode.nvim")
+
+    use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
+
     -- Useful plugin to show you pending keybinds.
-    { "folke/which-key.nvim",  opts = {} },
-    {
-        -- Adds git releated signs to the gutter, as well as utilities for managing changes
-        "lewis6991/gitsigns.nvim",
-        opts = {
-            -- See `:help gitsigns.txt`
-            signs = {
-                add = { text = "+" },
-                change = { text = "~" },
-                delete = { text = "_" },
-                topdelete = { text = "‾" },
-                changedelete = { text = "~" },
-            },
-            on_attach = function(bufnr)
-                vim.keymap.set("n", "[c", require("gitsigns").prev_hunk, { buffer = bufnr, desc = "Go to Previous Hunk" })
-                vim.keymap.set("n", "]c", require("gitsigns").next_hunk, { buffer = bufnr, desc = "Go to Next Hunk" })
-                vim.keymap.set("n", "<leader>ph", require("gitsigns").preview_hunk,
-                    { buffer = bufnr, desc = "[P]review [H]unk" })
-            end,
+    use {
+        "folke/which-key.nvim",
+        config = function()
+            vim.o.timeout = true
+            vim.o.timeoutlen = 300
+            require("which-key").setup {
+                -- your configuration comes here
+                -- or leave it empty to use the default settings
+                -- refer to the configuration section below
+            }
+        end
+    }
+
+    use("nvim-lualine/lualine.nvim")
+
+    use("lukas-reineke/indent-blankline.nvim")
+
+    use {
+        'numToStr/Comment.nvim',
+        config = function()
+            require('Comment').setup()
+        end
+    }
+
+    use("norcalli/nvim-colorizer.lua")
+
+    use {
+        'nvim-tree/nvim-tree.lua',
+        requires = {
+            'nvim-tree/nvim-web-devicons', -- optional
         },
-    },
+    }
 
-    {
-        "NTBBloodbath/doom-one.nvim",
-    },
-    { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
-    { "EdenEast/nightfox.nvim" },
-    {
-        -- Set lualine as statusline
-        "nvim-lualine/lualine.nvim",
-        -- See `:help lualine.txt`
-        -- opts = {
-        --   options = {
-        --     icons_enabled = false,
-        --     theme = "onedark",
-        --     component_separators = "|",
-        --     section_separators = "",
-        --   },
-        -- },
-    },
+    use("maxmellon/vim-jsx-pretty")
 
-    {
-        -- Add indentation guides even on blank lines
-        "lukas-reineke/indent-blankline.nvim",
-        -- Enable `lukas-reineke/indent-blankline.nvim`
-        -- See `:help indent_blankline.txt`
-        opts = {
-            char = "┊",
-            show_trailing_blankline_indent = false,
-        },
-    },
+    use("windwp/nvim-autopairs")
 
-    -- "gc" to comment visual regions/lines
-    { "numToStr/Comment.nvim", opts = {} },
-    {
-        "norcalli/nvim-colorizer.lua"
-    },
-    {
-        -- Highlight, edit, and navigate code
-        "nvim-treesitter/nvim-treesitter",
-        dependencies = {
-            "nvim-treesitter/nvim-treesitter-textobjects",
-        },
-        build = ":TSUpdate",
-    },
-    {
-        "nvim-tree/nvim-tree.lua",
-        version = "*",
-        dependencies = {
-            "nvim-tree/nvim-web-devicons",
-        },
-        -- config = function()
-        --   require("nvim-tree").setup {}
-        -- end,
-    },
-    "windwp/nvim-autopairs",
-    "christoomey/vim-tmux-navigator",
+    use("christoomey/vim-tmux-navigator")
 
-    "prisma/vim-prisma",
+    use("prisma/vim-prisma")
 
-    -- Discord
-    "andweeb/presence.nvim",
-}, {})
+    use("andweeb/presence.nvim")
+end)

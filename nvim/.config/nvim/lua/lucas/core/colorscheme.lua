@@ -1,8 +1,8 @@
 local status, _ = pcall(vim.cmd, 'colorscheme doom-one')
 
 if not status then
-  print('Colorscheme not found')
-  return
+    print('Colorscheme not found')
+    return
 end
 
 pcall(vim.cmd, "hi Normal guibg=none ctermbg=none")
