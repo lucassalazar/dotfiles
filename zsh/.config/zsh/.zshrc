@@ -39,9 +39,10 @@ bindkey -v '^?' backward-delete-char
 plug "romkatv/powerlevel10k"
 plug "zsh-users/zsh-autosuggestions"
 plug "zsh-users/zsh-syntax-highlighting"
-plug "$HOME/.asdf/asdf.sh"
+plug "$XDG_CONFIG_HOME/nvm/nvm.sh"
+# plug "$HOME/.asdf/asdf.sh"
 plug "$HOME/.fzf.zsh"
-plug "$HOME/.config/zsh/.p10k.zsh"
+plug "$XDG_CONFIG_HOME/zsh/.p10k.zsh"
 
 # Keybinds
 bindkey -s ^f "tmux-sessionizer\n"

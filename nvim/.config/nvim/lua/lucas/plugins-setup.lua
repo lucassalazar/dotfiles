@@ -38,6 +38,7 @@ return packer.startup(function(use)
     }
 
     use("NTBBloodbath/doom-one.nvim")
+    use("olimorris/onedarkpro.nvim")
 
     use({
         "folke/trouble.nvim",

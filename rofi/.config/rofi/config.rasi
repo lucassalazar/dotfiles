@@ -1,6 +1,6 @@
 configuration {
   modes: "window,drun,run,ssh";
-	font: "SauceCodePro Nerd Font Bold 9";
+	font: "Hack Nerd Font Bold 9";
 	show-icons: true;
 	drun-match-fields: "name,generic,exec,categories";
 }

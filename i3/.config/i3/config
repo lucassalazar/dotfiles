@@ -50,16 +50,16 @@ client.urgent           $red    $red    $white  $white      $red
 client.placeholder      $black  $bg     $white  $black      $bg
 
 # Set workspaces
-workspace 1 output $main_monitor
-workspace 2 output $main_monitor
-workspace 3 output $main_monitor
-workspace 4 output $main_monitor
-workspace 5 output $main_monitor
-workspace 6 output $external_monitor
-workspace 7 output $external_monitor
-workspace 8 output $external_monitor
-workspace 9 output $external_monitor
-workspace 10 output $external_monitor
+workspace 1 output $external_monitor
+workspace 2 output $external_monitor
+workspace 3 output $external_monitor
+workspace 4 output $external_monitor
+workspace 5 output $external_monitor
+workspace 6 output $main_monitor
+workspace 7 output $main_monitor
+workspace 8 output $main_monitor
+workspace 9 output $main_monitor
+workspace 10 output $main_monitor
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
