@@ -1,0 +1,586 @@
+live_config_reload = true
+
+# [[Catppuccin.indexed_colors]]
+# color = "#FAB387"
+# index = 16
+#
+# [[Catppuccin.indexed_colors]]
+# color = "#F5E0DC"
+# index = 17
+#
+# [Catppuccin.bright]
+# black = "#585B70"
+# blue = "#89B4FA"
+# cyan = "#94E2D5"
+# green = "#A6E3A1"
+# magenta = "#F5C2E7"
+# red = "#F38BA8"
+# white = "#A6ADC8"
+# yellow = "#F9E2AF"
+#
+# [Catppuccin.cursor]
+# cursor = "#F5E0DC"
+# text = "#1E1E2E"
+#
+# [Catppuccin.dim]
+# black = "#45475A"
+# blue = "#89B4FA"
+# cyan = "#94E2D5"
+# green = "#A6E3A1"
+# magenta = "#F5C2E7"
+# red = "#F38BA8"
+# white = "#BAC2DE"
+# yellow = "#F9E2AF"
+#
+# [Catppuccin.hints.end]
+# background = "#A6ADC8"
+# foreground = "#1E1E2E"
+#
+# [Catppuccin.hints.start]
+# background = "#F9E2AF"
+# foreground = "#1E1E2E"
+#
+# [Catppuccin.normal]
+# black = "#45475A"
+# blue = "#89B4FA"
+# cyan = "#94E2D5"
+# green = "#A6E3A1"
+# magenta = "#F5C2E7"
+# red = "#F38BA8"
+# white = "#BAC2DE"
+# yellow = "#F9E2AF"
+#
+# [Catppuccin.primary]
+# background = "#1E1E2E"
+# bright_foreground = "#CDD6F4"
+# dim_foreground = "#CDD6F4"
+# foreground = "#CDD6F4"
+#
+# [Catppuccin.search.focused_match]
+# background = "#A6E3A1"
+# foreground = "#1E1E2E"
+#
+# [Catppuccin.search.footer_bar]
+# background = "#A6ADC8"
+# foreground = "#1E1E2E"
+#
+# [Catppuccin.search.matches]
+# background = "#A6ADC8"
+# foreground = "#1E1E2E"
+#
+# [Catppuccin.selection]
+# background = "#F5E0DC"
+# text = "#1E1E2E"
+#
+# [Catppuccin.vi_mode_cursor]
+# cursor = "#B4BEFE"
+# text = "#1E1E2E"
+#
+# [Dracula.bright]
+# black = "#6272a4"
+# blue = "#d6acff"
+# cyan = "#a4ffff"
+# green = "#69ff94"
+# magenta = "#ff92df"
+# red = "#ff6e6e"
+# white = "#ffffff"
+# yellow = "#ffffa5"
+#
+# [Dracula.cursor]
+# cursor = "CellForeground"
+# text = "CellBackground"
+#
+# [Dracula.footer_bar]
+# background = "#282a36"
+# foreground = "#f8f8f2"
+#
+# [Dracula.hints.end]
+# background = "#282a36"
+# foreground = "#f1fa8c"
+#
+# [Dracula.hints.start]
+# background = "#f1fa8c"
+# foreground = "#282a36"
+#
+# [Dracula.line_indicator]
+# background = "None"
+# foreground = "None"
+#
+# [Dracula.normal]
+# black = "#21222c"
+# blue = "#bd93f9"
+# cyan = "#8be9fd"
+# green = "#50fa7b"
+# magenta = "#ff79c6"
+# red = "#ff5555"
+# white = "#f8f8f2"
+# yellow = "#f1fa8c"
+#
+# [Dracula.primary]
+# background = "#282a36"
+# bright_foreground = "#ffffff"
+# foreground = "#f8f8f2"
+#
+# [Dracula.search.focused_match]
+# background = "#ffb86c"
+# foreground = "#44475a"
+#
+# [Dracula.search.matches]
+# background = "#50fa7b"
+# foreground = "#44475a"
+#
+# [Dracula.selection]
+# background = "#44475a"
+# text = "CellForeground"
+#
+# [Dracula.vi_mode_cursor]
+# cursor = "CellForeground"
+# text = "CellBackground"
+
+# [[Kanawaga.indexed_colors]]
+# color = "0xffa066"
+# index = 16
+#
+# [[Kanawaga.indexed_colors]]
+# color = "0xff5d62"
+# index = 17
+#
+# [Kanawaga.DoomOne.bright]
+# black = "#5b6268"
+# blue = "#3071db"
+# cyan = "#46d9ff"
+# green = "#4db5bd"
+# magenta = "#a9a1e1"
+# red = "#da8548"
+# white = "#dfdfdf"
+# yellow = "#ecbe7b"
+#
+# [Kanawaga.DoomOne.cursor]
+# cursor = "#528bff"
+# text = "CellBackground"
+#
+# [Kanawaga.DoomOne.normal]
+# black = "#1c1f24"
+# blue = "#51afef"
+# cyan = "#5699af"
+# green = "#98be65"
+# magenta = "#c678dd"
+# red = "#ff6c6b"
+# white = "#abb2bf"
+# yellow = "#da8548"
+#
+# [Kanawaga.DoomOne.primary]
+# background = "#282c34"
+# foreground = "#bbc2cf"
+#
+# [Kanawaga.DoomOne.selection]
+# background = "#3e4451"
+# text = "CellForeground"
+#
+# [Kanawaga.bright]
+# black = "0x727169"
+# blue = "0x7fb4ca"
+# cyan = "0x7aa89f"
+# green = "0x98bb6c"
+# magenta = "0x938aa9"
+# red = "0xe82424"
+# white = "0xdcd7ba"
+# yellow = "0xe6c384"
+#
+# [Kanawaga.normal]
+# black = "0x090618"
+# blue = "0x7e9cd8"
+# cyan = "0x6a9589"
+# green = "0x76946a"
+# magenta = "0x957fb8"
+# red = "0xc34043"
+# white = "0xc8c093"
+# yellow = "0xc0a36e"
+#
+# [Kanawaga.primary]
+# background = "0x1f1f28"
+# foreground = "0xdcd7ba"
+#
+# [Kanawaga.selection]
+# background = "0x2d4f67"
+# foreground = "0xc8c093"
+
+# [Matrix.bright]
+# black = "#000000"
+# blue = "#005500"
+# cyan = "#55ff55"
+# green = "#55ff55"
+# magenta = "#55ff55"
+# red = "#55ff55"
+# white = "#00cc00"
+# yellow = "#55ff55"
+#
+# [Matrix.cursor]
+# cursor = "#00cc00"
+# text = "#000000"
+#
+# [Matrix.normal]
+# black = "#000000"
+# blue = "#005500"
+# cyan = "#00cc00"
+# green = "#00cc00"
+# magenta = "#55ff55"
+# red = "#55ff55"
+# white = "#00cc00"
+# yellow = "#00cc00"
+#
+# [Matrix.primary]
+# background = "#000000"
+# foreground = "#00cc00"
+#
+# [MoonFly.bright]
+# black = "#949494"
+# blue = "#74b2ff"
+# cyan = "#85dc85"
+# green = "#36c692"
+# magenta = "#ae81ff"
+# red = "#ff5189"
+# white = "#e4e4e4"
+# yellow = "#c2c292"
+#
+# [MoonFly.cursor]
+# cursor = "#9e9e9e"
+# text = "#080808"
+#
+# [MoonFly.normal]
+# black = "#323437"
+# blue = "#80a0ff"
+# cyan = "#79dac8"
+# green = "#8cc85f"
+# magenta = "#d183e8"
+# red = "#ff5454"
+# white = "#c6c6c6"
+# yellow = "#e3c78a"
+#
+# [MoonFly.primary]
+# background = "#080808"
+# bright_foreground = "#eeeeee"
+# foreground = "#b2b2b2"
+#
+# [MoonFly.selection]
+# background = "#b2ceee"
+# text = "#080808"
+#
+# [NightFly.bright]
+# black = "#7c8f8f"
+# blue = "#82aaff"
+# cyan = "#7fdbca"
+# green = "#21c7a8"
+# magenta = "#ae81ff"
+# red = "#ff5874"
+# white = "#d6deeb"
+# yellow = "#ecc48d"
+#
+# [NightFly.cursor]
+# cursor = "#9ca1aa"
+# text = "#080808"
+#
+# [NightFly.normal]
+# black = "#1d3b53"
+# blue = "#82aaff"
+# cyan = "#7fdbca"
+# green = "#a1cd5e"
+# magenta = "#c792ea"
+# red = "#fc514e"
+# white = "#a1aab8"
+# yellow = "#e3d18a"
+#
+# [NightFly.primary]
+# background = "#011627"
+# bright_foreground = "#eeeeee"
+# foreground = "#acb4c2"
+#
+# [NightFly.selection]
+# background = "#b2ceee"
+# text = "#080808"
+#
+# [[Nightfox.indexed_colors]]
+# color = "#f4a261"
+# index = 16
+#
+# [[Nightfox.indexed_colors]]
+# color = "#d67ad2"
+# index = 17
+#
+# [Nightfox.bright]
+# black = "#575860"
+# blue = "#86abdc"
+# cyan = "#7ad4d6"
+# green = "#8ebaa4"
+# magenta = "#baa1e2"
+# red = "#d16983"
+# white = "#e4e4e5"
+# yellow = "#e0c989"
+#
+# [Nightfox.normal]
+# black = "#393b44"
+# blue = "#719cd6"
+# cyan = "#63cdcf"
+# green = "#81b29a"
+# magenta = "#9d79d6"
+# red = "#c94f6d"
+# white = "#dfdfe0"
+# yellow = "#dbc074"
+#
+# [Nightfox.primary]
+# background = "#192330"
+# foreground = "#cdcecf"
+#
+# [Nord.bright]
+# black = "#4C566A"
+# blue = "#81A1C1"
+# cyan = "#8FBCBB"
+# green = "#A3BE8C"
+# magenta = "#B48EAD"
+# red = "#BF616A"
+# white = "#ECEFF4"
+# yellow = "#EBCB8B"
+#
+# [Nord.normal]
+# black = "#3B4252"
+# blue = "#81A1C1"
+# cyan = "#88C0D0"
+# green = "#A3BE8C"
+# magenta = "#B48EAD"
+# red = "#BF616A"
+# white = "#E5E9F0"
+# yellow = "#EBCB8B"
+#
+# [Nord.primary]
+# background = "#2E3440"
+# foreground = "#D8DEE9"
+#
+# [[Nordfox.indexed_colors]]
+# color = "#c9826b"
+# index = 16
+#
+# [[Nordfox.indexed_colors]]
+# color = "#bf88bc"
+# index = 17
+#
+# [Nordfox.bright]
+# black = "#465780"
+# blue = "#8cafd2"
+# cyan = "#93ccdc"
+# green = "#b1d196"
+# magenta = "#c895bf"
+# red = "#d06f79"
+# white = "#e7ecf4"
+# yellow = "#f0d399"
+#
+# [Nordfox.normal]
+# black = "#3b4252"
+# blue = "#81a1c1"
+# cyan = "#88c0d0"
+# green = "#a3be8c"
+# magenta = "#b48ead"
+# red = "#bf616a"
+# white = "#e5e9f0"
+# yellow = "#ebcb8b"
+#
+# [Nordfox.primary]
+# background = "#2e3440"
+# foreground = "#cdcecf"
+#
+# [OneDark.bright]
+# black = "#5c6370"
+# blue = "#61afef"
+# cyan = "#56b6c2"
+# green = "#98c379"
+# magenta = "#c678dd"
+# red = "#e06c75"
+# white = "#e6efff"
+# yellow = "#d19a66"
+#
+# [OneDark.dim]
+# black = "#1e2127"
+# blue = "#61afef"
+# cyan = "#56b6c2"
+# green = "#98c379"
+# magenta = "#c678dd"
+# red = "#e06c75"
+# white = "#828791"
+# yellow = "#d19a66"
+#
+# [OneDark.normal]
+# black = "#1e2127"
+# blue = "#61afef"
+# cyan = "#56b6c2"
+# green = "#98c379"
+# magenta = "#c678dd"
+# red = "#e06c75"
+# white = "#828791"
+# yellow = "#d19a66"
+#
+# [OneDark.primary]
+# background = "#1e2127"
+# bright_foreground = "#e6efff"
+# foreground = "#abb2bf"
+#
+# [TokyoNight.bright]
+# black = "#444b6a"
+# blue = "#7da6ff"
+# cyan = "#0db9d7"
+# green = "#b9f27c"
+# magenta = "#bb9af7"
+# red = "#ff7a93"
+# white = "#acb0d0"
+# yellow = "#ff9e64"
+#
+# [TokyoNight.normal]
+# black = "#32344a"
+# blue = "#7aa2f7"
+# cyan = "#449dab"
+# green = "#9ece6a"
+# magenta = "#ad8ee6"
+# red = "#f7768e"
+# white = "#787c99"
+# yellow = "#e0af68"
+#
+# [TokyoNight.primary]
+# background = "#1a1b26"
+# foreground = "#a9b1d6"
+#
+# [TokyoNightStorm.bright]
+# black = "#444b6a"
+# blue = "#7da6ff"
+# cyan = "#0db9d7"
+# green = "#b9f27c"
+# magenta = "#bb9af7"
+# red = "#ff7a93"
+# white = "#acb0d0"
+# yellow = "#ff9e64"
+#
+# [TokyoNightStorm.normal]
+# black = "#32344a"
+# blue = "#7aa2f7"
+# cyan = "#449dab"
+# green = "#9ece6a"
+# magenta = "#ad8ee6"
+# red = "#f7768e"
+# white = "#9699a8"
+# yellow = "#e0af68"
+#
+# [TokyoNightStorm.primary]
+# background = "#24283b"
+# foreground = "#a9b1d6"
+#
+# [TomorrowNight.bright]
+# black = "#666666"
+# blue = "#81a2be"
+# cyan = "#54ced6"
+# green = "#9ec400"
+# magenta = "#b77ee0"
+# red = "#ff3334"
+# white = "#282a2e"
+# yellow = "#f0c674"
+#
+# [TomorrowNight.cursor]
+# cursor = "#ffffff"
+# text = "#1d1f21"
+#
+# [TomorrowNight.normal]
+# black = "#1d1f21"
+# blue = "#81a2be"
+# cyan = "#70c0ba"
+# green = "#b5bd68"
+# magenta = "#b294bb"
+# red = "#cc6666"
+# white = "#373b41"
+# yellow = "#e6c547"
+#
+# [TomorrowNight.primary]
+# background = "#1d1f21"
+# foreground = "#c5c8c6"
+
+[colors]
+draw_bold_text_with_bright_colors = true
+
+[colors.bright]
+black = "#5b6268"
+blue = "#3071db"
+cyan = "#46d9ff"
+green = "#4db5bd"
+magenta = "#a9a1e1"
+red = "#da8548"
+white = "#dfdfdf"
+yellow = "#ecbe7b"
+
+[colors.cursor]
+cursor = "#528bff"
+text = "CellBackground"
+
+[colors.normal]
+black = "#1c1f24"
+blue = "#51afef"
+cyan = "#5699af"
+green = "#98be65"
+magenta = "#c678dd"
+red = "#ff6c6b"
+white = "#abb2bf"
+yellow = "#da8548"
+
+[colors.primary]
+background = "#282c34"
+foreground = "#bbc2cf"
+
+[colors.selection]
+background = "#3e4451"
+text = "CellForeground"
+
+[cursor.style]
+blinking = "Off"
+shape = "Block"
+
+[env]
+TERM = "xterm-256color"
+
+[font]
+size = 6
+
+[font.bold]
+family = "Hack Nerd Font"
+style = "Bold"
+
+[font.bold_italic]
+family = "Hack Nerd Font"
+style = "BoldItalic"
+
+[font.italic]
+family = "Hack Nerd Font"
+style = "Italic"
+
+[font.normal]
+family = "Hack Nerd Font"
+style = "Regular"
+
+[[keyboard.bindings]]
+action = "SpawnNewInstance"
+key = "Return"
+mods = "Super|Shift"
+
+[scrolling]
+history = 10000
+# multiplayer = 3
+
+[selection]
+save_to_clipboard = false
+
+[shell]
+program = "/usr/bin/zsh"
+
+[window]
+opacity = 1
+
+[window.class]
+general = "Alacritty"
+instance = "Alacritty"
+
+[window.padding]
+x = 5
+y = 5

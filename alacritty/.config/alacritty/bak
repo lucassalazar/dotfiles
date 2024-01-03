@@ -1,0 +1,79 @@
+window:
+  padding:
+    x: 5 
+    y: 5
+  class:
+    instance: Alacritty
+    general: Alacritty
+  opacity: 1
+
+scrolling:
+  history: 10000
+
+font:
+  normal:
+    family: "Hack Nerd Font"
+    style: Regular
+  bold:
+    family: "Hack Nerd Font"
+    style: Bold
+  italic: 
+    family: "Hack Nerd Font"
+    style: Italic
+  bold_italic:
+    family: "Hack Nerd Font"
+    style: BoldItalic
+  size: 6
+
+draw_bold_text_with_bright_colors: true 
+
+  ### Doom One ###
+  DoomOne: &DoomOne
+    primary:
+      background: '#282c34'
+      foreground: '#bbc2cf'
+    cursor:
+      text: CellBackground
+      cursor: '#528bff'
+    selection:
+      text: CellForeground
+      background: '#3e4451'
+    normal:
+      black:   '#1c1f24'
+      red:     '#ff6c6b'
+      green:   '#98be65'
+      yellow:  '#da8548'
+      blue:    '#51afef'
+      magenta: '#c678dd'
+      cyan:    '#5699af'
+      white:   '#abb2bf'
+    bright:
+      black:   '#5b6268'
+      red:     '#da8548'
+      green:   '#4db5bd'
+      yellow:  '#ecbe7b'
+      blue:    '#3071db'   # This is 2257a0 in Doom Emacs but I lightened it.
+      magenta: '#a9a1e1'
+      cyan:    '#46d9ff'
+      white:   '#dfdfdf'
+
+colors: *DoomOne
+
+cursor: 
+  style:
+    shape: Block
+    blinking: Off
+
+selection:
+  save_to_clipboard: false
+
+live_config_reload: true
+
+shell:
+  program: /usr/bin/zsh
+
+key_bindings: 
+  - { key: Return, mods: Super|Shift, action: SpawnNewInstance }
+
+env: 
+  TERM: xterm-256color
