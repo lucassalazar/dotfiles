@@ -1,6 +1,6 @@
 # pacman
 alias archupdate="sudo pacman -Syyu"
-alias cleanpackages="sudo pacman -Qtdq | pacman -Rns -"
+alias cleanpackages="sudo pacman -Qtdq | sudo pacman -Rns -"
 alias updatemirrors="rate-mirrors --allow-root --protocol https arch | sudo tee /etc/pacman.d/mirrorlist"
 
 # nvim

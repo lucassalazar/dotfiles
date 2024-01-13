@@ -1,8 +1,8 @@
 * {
-    background-color: #282c3400;
-    background: #282c34ee;
+    background-color: #1E1E2E00;
+    background: #1E1E2Eee;
 
-    blue: #51afef;
+    blue: #89B4FA;
     text-color: #bbc2cf;
 }
 

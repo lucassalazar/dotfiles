@@ -20,6 +20,10 @@ export MANWIDTH=999
 
 export WINIT_X11_SCALE_FACTOR=1.75 alacritty
 
+export ANDROID_HOME=$HOME/Android/Sdk
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+
 # lf icons
 export LF_ICONS="\
 tw=:\
