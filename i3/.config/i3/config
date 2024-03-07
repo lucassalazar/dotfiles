@@ -1,12 +1,12 @@
 # Set monitor variables
-set $main_monitor eDP-1-1
-set $external_monitor HDMI-0
+set $main_monitor eDP-1
+set $external_monitor HDMI-1-0
 
 # Set modifier key as "super"
 set $mod Mod4
 
 # Set font
-font pango: SauceCodePro Nerd Font 10
+font pango: JetBrainsMono Nerd Font 10
 
 # Titlebar customization
 show_marks yes
@@ -29,6 +29,9 @@ smart_gaps off
 
 # Set cursor speed
 exec --no-startup-id xinput set-prop 11 295 1.9
+
+# Start polkit agent
+exec --no-startup-id lxpolkit
 
 # Set style
 set_from_resource $bg i3wm.background
@@ -227,11 +230,11 @@ bindsym $mod+Shift+b exec betterlockscreen -l dim
 
 ### Screenshot ###
 # Fullscreen
-bindsym Print exec --no-startup-id flameshot full -p "/home/$USER/pictures/screenshots"
+bindsym Print exec --no-startup-id flameshot full -p "/home/$USER/Pictures/screenshots"
 # Active window
-bindsym $mod+Print exec --no-startup-id flameshot screen -n 0 -p "/home/$USER/pictures/screenshots"
+bindsym $mod+Print exec --no-startup-id flameshot screen -n 0 -p "/home/$USER/Pictures/screenshots"
 # Selection
-bindsym Shift+Print exec --no-startup-id flameshot gui -p "/home/$USER/pictures/screenshots" 
+bindsym Shift+Print exec --no-startup-id flameshot gui -p "/home/$USER/Pictures/screenshots" 
 # Fullscreen clipboard
 bindsym Ctrl+Print exec --no-startup-id flameshot full --clipboard 
 # Active window clipboard
@@ -241,8 +244,9 @@ bindsym Ctrl+Shift+Print exec --no-startup-id flameshot gui --clipboard
 
 ### Launch programs ###
 # Start rofi (a program launcher)
-bindsym $mod+d exec "rofi -modes drun,run -show drun" 
+bindsym $mod+d exec "rofi -modes drun,run -show drun -drun-command 'pkexec'" 
 bindsym $mod+Return exec alacritty 
-bindsym $mod+e exec pcmanfm 
+# bindsym $mod+e exec pcmanfm 
+bindsym $mod+e exec nautilus
 
 exec_always --no-startup-id ~/.config/i3/autostart.sh

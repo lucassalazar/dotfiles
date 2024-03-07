@@ -4,33 +4,33 @@
 xrdb -merge ~/.Xresources &
 
 # Compositor
-picom -f --config ~/.config/picom/picom.conf --vsync &
+# picom -f --config ~/.config/picom/picom.conf --vsync &
 
 # Notifications
-dunst &
+# dunst &
 
 # Sets the keyboard layout to english
-setxkbmap us &
+# setxkbmap us &
 
 # Network Manager
-nm-applet &
+# nm-applet &
 
 # Battery Utility
-cbatticon &
+# cbatticon &
 
 # Removable Media Utility
-udiskie -t -f pcmanfm &
+# udiskie -t -f pcmanfm &
 
 # Bluetooth Manager
-blueberry-tray &
+# blueberry-tray &
 
 # Volume Utility
-volumeicon &
+# volumeicon &
 
 # Screenshot Utility
-flameshot &
+# flameshot &
 
-exec i3
+# exec i3
 # exec qtile start
 # exec awesome
 # exec dwm

@@ -1,4 +1,4 @@
-neofetch
+# neofetch
 
 # Loads lightweight plugin manager
 [ -f "$HOME/.local/share/zap/zap.zsh" ] && source "$HOME/.local/share/zap/zap.zsh"
@@ -38,13 +38,14 @@ bindkey -v '^?' backward-delete-char
 # Plugins
 plug "romkatv/powerlevel10k"
 plug "zsh-users/zsh-autosuggestions"
+plug "zap-zsh/supercharge"
+plug "zap-zsh/zap-prompt"
 plug "zsh-users/zsh-syntax-highlighting"
 plug "$XDG_CONFIG_HOME/nvm/nvm.sh"
-# plug "$HOME/.asdf/asdf.sh"
 plug "$HOME/.fzf.zsh"
 plug "$XDG_CONFIG_HOME/zsh/.p10k.zsh"
 
 # Keybinds
-bindkey -s ^f "tmux-sessionizer\n"
-bindkey -s ^h "tmux-cht\n"
-bindkey -s ^e "lf\n"
+bindkey -s '^f' "tmux-sessionizer\n"
+bindkey -s '^h' "tmux-cht\n"
+bindkey -s '^e' "lf\n"

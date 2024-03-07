@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
 # Main monitor
-main=eDP-1-1
+main=eDP-1
 # External monitor
-external=HDMI-0
+external=HDMI-1-0
 
 # Terminate all running instances
 killall polybar

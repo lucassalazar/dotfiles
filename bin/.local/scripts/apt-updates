@@ -1,0 +1,8 @@
+#!/bin/bash
+
+# Check for available upgrades and output the number
+pending_updates=$(/usr/bin/apt list --upgradable 2>/dev/null | grep -cE '\bupgradable\b')
+
+# Output the number of pending updates
+echo $pending_updates
+
