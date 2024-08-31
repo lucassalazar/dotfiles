@@ -2,6 +2,8 @@
 set hidden true
 set ignorecase true
 set icons true
+set previewer ~/.config/lf/previewer
+set cleaner ~/.config/lf/cleaner
 
 # Custom functions
 cmd mkdir ${{
@@ -16,7 +18,7 @@ cmd mkfile ${{
     $EDITOR $ans
 }}
 
-cmd setwallpaper %cp "$f" ~/pictures/wallpaper.jpg && feh --bg-scale "$f"
+cmd setwallpaper %cp "$f" ~/Pictures/wallpaper.jpg && feh --bg-scale "$f"
 
 # Archive bindings
 cmd unarchive ${{
@@ -82,10 +84,10 @@ map dr restore_trash
 
 # Movement
 map g. cd ~/dotfiles
-map gd cd ~/documents
-map gD cd ~/downloads
-map gp cd ~/pictures
+map gd cd ~/Documents
+map gD cd ~/Downloads
+map gp cd ~/Pictures
 map gc cd ~/.config
-map gv cd ~/videos
+map gv cd ~/Videos
 map gs cd ~/.local/scripts
 map gt cd ~/.local/share/Trash/files

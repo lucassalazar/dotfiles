@@ -1,0 +1,51 @@
+#!/bin/sh
+draw() {
+  path="$(readlink -f -- "$1" | sed 's/\\/\\\\/g;s/"/\\"/g')"
+  printf '{"action":"add","identifier":"preview","x":%d,"y":%d,"width":%d,"height":%d,"scaler":"contain","scaling_position_x":0.5,"scaling_position_y":0.5,"path":"%s"}\n' \
+    "$x" "$y" "$width" "$height" "$path" >"$FIFO_UEBERZUG"
+  exit 1
+}
+
+hash() {
+  printf '%s/.cache/lf/%s' "$HOME" \
+    "$(stat --printf '%n\0%i\0%F\0%s\0%W\0%Y' -- "$(readlink -f -- "$1")" | sha256sum | cut -d' ' -f1)"
+}
+
+cache() {
+  cache="$1"
+  if ! [ -f "$cache" ]; then
+    shift
+    "$@"
+  fi
+  draw "$cache"
+}
+
+file="$1"
+width="$2"
+height="$3"
+x="$4"
+y="$5"
+
+if [ -n "$FIFO_UEBERZUG" ]; then
+  case "$(file -Lb --mime-type -- "$file")" in
+    image/*)
+      orientation="$(magick identify -format '%[EXIF:Orientation]\n' -- "$file")"
+      if [ -n "$orientation" ] && [ "$orientation" != 1 ]; then
+        cache="$(hash "$file").jpg"
+        cache "$cache" magick -- "$file" -auto-orient "$cache"
+      else
+        draw "$file"
+      fi
+      ;;
+    video/*)
+      cache="$(hash "$file").jpg"
+      cache "$cache" ffmpegthumbnailer -i "$file" -o "$cache" -s 0
+      ;;
+    text/*)
+      cat "$file"
+      ;;
+  esac
+fi
+
+file -Lb -- "$file" | fold -s -w "$width"
+exit 0

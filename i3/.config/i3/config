@@ -1,6 +1,6 @@
 # Set monitor variables
-set $main_monitor eDP-1
-set $external_monitor HDMI-1-0
+set $main_monitor eDP-1-1
+set $external_monitor HDMI-0
 
 # Set modifier key as "super"
 set $mod Mod4
@@ -145,8 +145,8 @@ bindsym $mod+x exec --no-startup-id sh ~/.local/scripts/monitorcfg
 bindsym $mod+c exec --no-startup-id sh ~/.local/scripts/keyboardcfg
 
 # Floating webcam
-for_window [title="video0 - mpv"] floating enable
-for_window [title="video0 - mpv"] sticky enable
+for_window [title="video0 - cheese"] floating enable
+for_window [title="video0 - cheese"] sticky enable
 bindsym $mod+w exec --no-startup-id sh ~/.local/scripts/camtoggle
 
 ###---Window Manipulation--###
@@ -228,6 +228,9 @@ bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 10%-
 bindsym $mod+Shift+x exec sh ~/.local/scripts/rofi-sysact
 bindsym $mod+Shift+b exec betterlockscreen -l dim
 
+## Headphones
+bindsym $mod+Shift+v exec sh ~/.local/scripts/wh1000xm4-audio-profile
+
 ### Screenshot ###
 # Fullscreen
 bindsym Print exec --no-startup-id flameshot full -p "/home/$USER/Pictures/screenshots"
@@ -245,8 +248,33 @@ bindsym Ctrl+Shift+Print exec --no-startup-id flameshot gui --clipboard
 ### Launch programs ###
 # Start rofi (a program launcher)
 bindsym $mod+d exec "rofi -modes drun,run -show drun -drun-command 'pkexec'" 
-bindsym $mod+Return exec alacritty 
+bindsym $mod+Return exec kitty 
 # bindsym $mod+e exec pcmanfm 
 bindsym $mod+e exec nautilus
+
+### Toggle VPN ###
+bindsym $mod+v exec --no-startup-id sh ~/.local/scripts/vpn 
+
+# bar {
+#     status_command i3status --config ~/.config/i3/i3status.conf
+#     position top    
+#     output $main_monitor
+#     output $external_monitor
+#     tray_output $external_monitor
+#     tray_output primary
+#     font pango: JetBrainsMono Nerd Font 10
+#     separator_symbol "  "
+#     i3bar_command i3bar --transparency
+#
+#     colors {
+#         background $bg
+#         statusline $fg
+#         separator $bg
+#         focused_workspace $blue $blue $bg
+#         active_workspace $black $black $fg
+#         inactive_workspace $black $black $fg
+#         urgent_workspace $red $red $bg
+#     }
+# }
 
 exec_always --no-startup-id ~/.config/i3/autostart.sh

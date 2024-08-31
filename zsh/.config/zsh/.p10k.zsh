@@ -38,13 +38,13 @@
   [[ $ZSH_VERSION == (5.<1->*|<6->.*) ]] || return
 
   # Prompt colors.
-  local grey='#45475A'
-  local red='#F38BA8'
-  local yellow='#F9E2AF'
-  local blue='#89B4FA'
-  local magenta='#F5C2E7'
-  local cyan='#94E2D5'
-  local white='#BAC2DE'
+  local grey='#928374'
+  local red='#FB4934'
+  local yellow='#FABD2F'
+  local blue='#83A598'
+  local magenta='#D3869B'
+  local cyan='#8EC07C'
+  local white='#EBDBB2'
 
   # Left prompt segments.
   typeset -g POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(
@@ -52,14 +52,14 @@
     dir                       # current directory
     vcs                       # git status
     # command_execution_time  # previous command duration
-    # virtualenv              # python virtual environment
+    virtualenv                # python virtual environment
     prompt_char               # prompt symbol
   )
 
   # Right prompt segments.
   typeset -g POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(
     command_execution_time    # previous command duration
-    virtualenv                # python virtual environment
+    # virtualenv                # python virtual environment
     context                   # user@host
     time                      # current time
   )
@@ -89,7 +89,7 @@
   typeset -g POWERLEVEL9K_PROMPT_CHAR_OVERWRITE_STATE=false
 
   # Grey Python Virtual Environment.
-  typeset -g POWERLEVEL9K_VIRTUALENV_FOREGROUND=$grey
+  typeset -g POWERLEVEL9K_VIRTUALENV_FOREGROUND=$yellow
   # Don't show Python version.
   typeset -g POWERLEVEL9K_VIRTUALENV_SHOW_PYTHON_VERSION=false
   typeset -g POWERLEVEL9K_VIRTUALENV_{LEFT,RIGHT}_DELIMITER=

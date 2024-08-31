@@ -49,3 +49,5 @@ plug "$XDG_CONFIG_HOME/zsh/.p10k.zsh"
 bindkey -s '^f' "tmux-sessionizer\n"
 bindkey -s '^h' "tmux-cht\n"
 bindkey -s '^e' "lf\n"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

@@ -1,4 +1,7 @@
 # default apps
+
+export BAXUS_HOME=$HOME/Documents/work/baxus
+
 export EDITOR="nvim"
 export TERMINAL="alacritty"
 export BROWSER="brave"
@@ -25,6 +28,10 @@ export PATH=$PATH:$ANDROID_HOME/emulator
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 
 export PATH=$PATH:/usr/bin
+
+export PATH=$PATH:/snap/k9s/current/bin
+
+export PATH=$PATH:$HOME/.local/share/solana/install/active_release/bin
 
 # lf icons
 export LF_ICONS="\
@@ -190,3 +197,4 @@ ex=:\
 *.nix=:\
 "
 export LC_ALL=en_US.UTF-8
+. "$HOME/.cargo/env"

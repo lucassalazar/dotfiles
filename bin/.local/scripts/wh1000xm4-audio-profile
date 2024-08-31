@@ -1,0 +1,55 @@
+#!/bin/sh
+
+# Device alias to match against
+DEVICE_ALIAS="WH-1000XM4"
+
+# Fetch the card name for the device
+CARD_NAME=$(pactl list cards | awk '/Name:/ {name=$2} /device.alias = "WH-1000XM4"/ {print name}')
+
+# If the card name is empty, exit
+if [ -z "$CARD_NAME" ]; then
+    echo "Unable to find the card for device $DEVICE_ALIAS"
+    exit 1
+fi
+
+# Retrieve all supported profiles for the card
+SUPPORTED_PROFILES=$(pactl list cards | awk -v card="$CARD_NAME" '/Name: / {if ($2 == card) {f=1} else {f=0}} f && /Profiles:/, /Active Profile:/ {if (!/Profiles:/ && !/Active Profile:/) print $1}')
+
+# List of profiles with descriptions
+PROFILES_DESCRIPTIONS="
+a2dp-sink:High Quality Audio Only
+headset-head-unit-cvsd:Mono audio / mic
+headset-head-unit-msbc:Mono audio / mic
+"
+
+# Create a list of profiles that we're interested in and are supported by the device
+FILTERED_PROFILES=""
+for profile in a2dp-sink headset-head-unit-cvsd headset-head-unit-msbc; do
+    if echo "$SUPPORTED_PROFILES" | grep -q "^${profile}:"; then
+        description=$(echo "$PROFILES_DESCRIPTIONS" | grep "^$profile:" | cut -d':' -f2)
+        FILTERED_PROFILES="$FILTERED_PROFILES$profile ($description)\n"
+    fi
+done
+
+if [ -z "$FILTERED_PROFILES" ]; then
+    echo "None of the desired profiles are supported by device $DEVICE_ALIAS"
+    exit 1
+fi
+
+# Remove the last newline
+FILTERED_PROFILES=$(echo "$FILTERED_PROFILES" | sed '$d')
+
+# Use dmenu to let the user select a profile
+SELECTED=$(echo "$FILTERED_PROFILES" | rofi -dmenu -p "Select profile: " -l 8)
+
+# Handle the user's selection
+if [ -n "$SELECTED" ]; then
+    selected_profile=$(echo "$SELECTED" | cut -d' ' -f1)
+    pactl set-card-profile "$CARD_NAME" "$selected_profile"
+    echo "Switched to profile: $SELECTED"
+    exit 0
+else
+    echo "No profile selected."
+    exit 1
+fi
+

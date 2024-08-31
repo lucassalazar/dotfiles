@@ -1,9 +1,9 @@
 * {
-    background-color: #1E1E2E00;
-    background: #1E1E2Eee;
+    background-color: #28282800;
+    background: #282828ee;
 
-    blue: #89B4FA;
-    text-color: #bbc2cf;
+    blue: #83A598;
+    text-color: #EBDBB2;
 }
 
 window {

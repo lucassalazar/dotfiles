@@ -1,0 +1,32 @@
+#!/bin/sh
+
+# Retrieve the list of available countries from NordVPN
+countries=$(nordvpn countries)
+
+# Check if the command succeeded
+if [ $? -ne 0 ]; then
+    echo "Failed to retrieve countries from NordVPN."
+    exit 1
+fi
+
+# Format the countries list to have one country per line
+formatted_countries=$(echo "$countries" | awk '{for(i=1;i<=NF;i++) print $i}' | tr -d ',')
+
+# Add the "Disconnect" option
+options=$(printf "Disconnect\n%s" "$formatted_countries")
+
+# Use rofi to select an option
+selected_option=$(echo "$options" | rofi -dmenu -p "VPN Action" -l 20)
+
+# Check if an option was selected
+if [ -n "$selected_option" ]; then
+    if [ "$selected_option" = "Disconnect" ]; then
+        echo "Disconnecting from VPN..."
+        nordvpn disconnect
+    else
+        echo "Connecting to $selected_option..."
+        nordvpn connect "$selected_option"
+    fi
+else
+    echo "No option selected."
+fi

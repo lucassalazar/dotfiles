@@ -1,17 +1,17 @@
 #!/bin/sh
 
 # Main monitor
-main=eDP-1
+main=eDP-1-1
 # External monitor
-external=HDMI-1-0
+external=HDMI-0
 
-if  xrandr | grep -q "$external d"; then
-	xrandr --output "$main" --mode 1920x1080 --primary
+if xrandr | grep "$external disconnected"; then
     xrandr --output "$external" --off
+    xrandr --output "$main" --rate 60 --mode 2560x1600 --primary
 else
-	xrandr --output "$main" --mode 1920x1080 --primary
-    xrandr --output "$external" --mode 1920x1080 
-    xrandr --output "$external" --left-of "$main"
+    xrandr --output "$main" --mode 2560x1600 --primary \
+           --output "$external" --mode 2560x1440 --rate 120 --left-of "$main"
 fi
 
-exec ~/.local/scripts/wallpapercfg
+~/.local/scripts/wallpapercfg
+

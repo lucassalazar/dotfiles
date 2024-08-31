@@ -1,0 +1,12 @@
+#!/bin/sh
+
+# Path to check
+VPN_PATH="/proc/sys/net/ipv4/conf/nordlynx"
+
+# Check if the path exists
+if [ -e "$VPN_PATH" ]; then
+    echo "ON"
+else
+    echo "OFF"
+fi
+

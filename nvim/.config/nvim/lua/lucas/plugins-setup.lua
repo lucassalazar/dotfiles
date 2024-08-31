@@ -40,6 +40,7 @@ return packer.startup(function(use)
     use("NTBBloodbath/doom-one.nvim")
     use("olimorris/onedarkpro.nvim")
     use({ "catppuccin/nvim", as = "catppuccin" })
+    use {'morhetz/gruvbox', config = function() vim.cmd.colorscheme("gruvbox") end }
 
     use({
         "folke/trouble.nvim",

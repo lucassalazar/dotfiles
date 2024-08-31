@@ -10,7 +10,7 @@ alias nvimconfig="nvim ~/.config/nvim"
 alias v="$EDITOR"
 alias vim="$EDITOR"
 alias p="sudo pacman"
-alias lf="lf-ueberzug"
+alias lf="$XDG_CONFIG_HOME/lf/ueberzug"
 
 # Colorize ls
 alias ls="exa -la --color=always --group-directories-first"
